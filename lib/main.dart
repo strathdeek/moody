@@ -7,6 +7,8 @@ import 'package:moody/data/repositories/mood_repository.dart';
 import 'package:moody/views/screens/dashboard_page.dart';
 import 'package:moody/views/screens/router.dart';
 
+import 'bloc/mood/cubit/navigation_cubit.dart';
+
 void main() async {
   await initializeHiveDatabase();
 
@@ -16,6 +18,9 @@ void main() async {
   runApp(MultiBlocProvider(providers: [
     BlocProvider(
       create: (context) => MoodBloc(moodRepository),
+    ),
+    BlocProvider(
+      create: (context) => NavigationCubit(),
     )
   ], child: MyApp()));
 }
@@ -29,7 +34,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       onGenerateRoute: generateRoute,
-      home: DashboardPage(),
+      initialRoute: '/',
     );
   }
 }
