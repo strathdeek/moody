@@ -6,7 +6,7 @@ Route generateRoute(RouteSettings settings) {
   switch (settings.name) {
     case DashboardPageRoute:
       return MaterialPageRoute(builder: (context) => DashboardPage());
-      break;
     default:
+      return MaterialPageRoute(builder: (context) => DashboardPage());
   }
 }

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:moody/data/providers/hive.dart';
 import 'package:moody/views/screens/dashboard_page.dart';
 import 'package:moody/views/screens/router.dart';
 
-void main() {
+void main() async {
+  await initializeHiveDatabase();
+
   runApp(MyApp());
 }
 
