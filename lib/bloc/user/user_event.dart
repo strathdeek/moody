@@ -4,7 +4,7 @@ abstract class UserEvent extends Equatable {
   const UserEvent();
 
   @override
-  List<Object> get props => [];
+  List<Object?> get props => [];
 }
 
 class UserAppStart extends UserEvent {}
@@ -17,7 +17,18 @@ class UserCreated extends UserEvent {
   UserCreated({required this.name, this.location, this.birthdate});
 
   @override
-  List<Object> get props => [name, location!, birthdate!];
+  List<Object?> get props => [name, location, birthdate];
+}
+
+class UserUpdated extends UserEvent {
+  final String? name;
+  final String? location;
+  final DateTime? birthdate;
+
+  UserUpdated({this.name, this.location, this.birthdate});
+
+  @override
+  List<Object?> get props => [name, location, birthdate];
 }
 
 class UserLocationUpdated extends UserEvent {
@@ -46,3 +57,5 @@ class UserBirthDateUpdated extends UserEvent {
   @override
   List<Object> get props => [birthdate];
 }
+
+class UserDeleted extends UserEvent {}

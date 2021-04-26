@@ -18,8 +18,8 @@ class UserAdapter extends TypeAdapter<User> {
     };
     return User(
       name: fields[0] as String,
-      birthDate: fields[1] as DateTime,
-      location: fields[2] as String,
+      birthDate: fields[1] as DateTime?,
+      location: fields[2] as String?,
     );
   }
 

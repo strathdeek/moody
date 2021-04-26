@@ -16,8 +16,8 @@ class User extends Equatable {
 
   User({
     required this.name,
-    required this.birthDate,
-    required this.location,
+    this.birthDate,
+    this.location,
   });
 
   User copyWith({
@@ -56,5 +56,5 @@ class User extends Equatable {
   bool get stringify => true;
 
   @override
-  List<Object> get props => [name, birthDate!, location!];
+  List<Object?> get props => [name, birthDate, location];
 }

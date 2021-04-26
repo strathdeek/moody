@@ -33,12 +33,25 @@ class UserBloc extends Bloc<UserEvent, UserState> {
             location: event.location,
             birthDate: event.birthdate);
         _userRepository.add(user);
+        yield UserLoadSuccess(user);
       } on RepositoryException catch (e) {
         yield UserLoadFail(e.error);
       }
     }
     if (state is UserLoadSuccess) {
       var user = (state as UserLoadSuccess).user;
+      if (event is UserUpdated) {
+        try {
+          var updatedUser = user.copyWith(
+              name: event.name,
+              location: event.location,
+              birthDate: event.birthdate);
+          _userRepository.update(updatedUser);
+          yield UserLoadSuccess(updatedUser);
+        } on RepositoryException catch (e) {
+          yield UserLoadFail(e.error);
+        }
+      }
       if (event is UserNameUpdated) {
         try {
           var updatedUser = user.copyWith(name: event.name);
@@ -62,6 +75,14 @@ class UserBloc extends Bloc<UserEvent, UserState> {
           var updatedUser = user.copyWith(location: event.location);
           _userRepository.update(updatedUser);
           yield UserLoadSuccess(updatedUser);
+        } on RepositoryException catch (e) {
+          yield UserLoadFail(e.error);
+        }
+      }
+      if (event is UserDeleted) {
+        try {
+          _userRepository.delete(user);
+          yield UserLoadNoUser();
         } on RepositoryException catch (e) {
           yield UserLoadFail(e.error);
         }
