@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:equatable/equatable.dart';
 import 'package:hive/hive.dart';
+import 'package:uuid/uuid.dart';
 
 part 'mood.g.dart';
 
@@ -15,10 +16,11 @@ class Mood extends Equatable {
   final DateTime date;
 
   Mood({
-    required this.id,
+    id,
     required this.score,
-    required this.date,
-  });
+    date,
+  })  : id = id ?? Uuid().v4(),
+        date = date ?? DateTime.now();
 
   Mood copyWith({
     String? id,
