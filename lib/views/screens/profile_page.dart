@@ -12,8 +12,8 @@ class ProfilePage extends StatefulWidget {
 
 class _ProfilePageState extends State<ProfilePage> {
   DateTime? _birthday;
-  TextEditingController _nameController = TextEditingController();
-  TextEditingController _locationController = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _locationController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
