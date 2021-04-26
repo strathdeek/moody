@@ -10,9 +10,9 @@ class User extends Equatable {
   @HiveField(0)
   final String name;
   @HiveField(1)
-  final DateTime birthDate;
+  final DateTime? birthDate;
   @HiveField(2)
-  final String location;
+  final String? location;
 
   User({
     required this.name,
@@ -35,8 +35,8 @@ class User extends Equatable {
   Map<String, dynamic> toMap() {
     return {
       'name': name,
-      'birthDate': birthDate.millisecondsSinceEpoch,
-      'location': location,
+      'birthDate': birthDate?.millisecondsSinceEpoch ?? '',
+      'location': location ?? '',
     };
   }
 
@@ -56,5 +56,5 @@ class User extends Equatable {
   bool get stringify => true;
 
   @override
-  List<Object> get props => [name, birthDate, location];
+  List<Object> get props => [name, birthDate!, location!];
 }
