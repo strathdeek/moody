@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:moody/bloc/mood/cubit/navigation_cubit.dart';
+import 'package:moody/bloc/navigation/navigation_cubit.dart';
 import 'package:moody/data/constants/navigation.dart';
 
 class NavigationTray extends StatelessWidget {
