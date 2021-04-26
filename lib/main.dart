@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:moody/views/screens/dashboard_page.dart';
+import 'package:moody/views/screens/router.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,6 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      onGenerateRoute: generateRoute,
       home: DashboardPage(),
     );
   }
