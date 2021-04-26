@@ -18,6 +18,7 @@ class MoodProvider {
   }
 
   List<Mood> get() {
-    return _moodBox.values.toList();
+    var moodEntries = _moodBox.values.toList();
+    return moodEntries;
   }
 }
