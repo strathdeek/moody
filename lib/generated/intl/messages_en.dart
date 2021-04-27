@@ -21,8 +21,20 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
+    "PageSettingsTitle" : MessageLookupByLibrary.simpleMessage("Settings"),
+    "appTitle" : MessageLookupByLibrary.simpleMessage("MOODY"),
     "pageDashboardGreeting" : MessageLookupByLibrary.simpleMessage("Welcome to Moody"),
     "pageDashboardGuest" : MessageLookupByLibrary.simpleMessage("Guest User."),
-    "pageDashboardHello" : MessageLookupByLibrary.simpleMessage("Hello, ")
+    "pageDashboardHello" : MessageLookupByLibrary.simpleMessage("Hello, "),
+    "pageDashboardTitle" : MessageLookupByLibrary.simpleMessage("Home"),
+    "pageProfileCreateButton" : MessageLookupByLibrary.simpleMessage("Create profile"),
+    "pageProfileDateOfBirthLabel" : MessageLookupByLibrary.simpleMessage("Date of Birth"),
+    "pageProfileHeader" : MessageLookupByLibrary.simpleMessage("My Profile"),
+    "pageProfileHeaderGuest" : MessageLookupByLibrary.simpleMessage("Guest User"),
+    "pageProfileLocationLabel" : MessageLookupByLibrary.simpleMessage("Location"),
+    "pageProfileNameLabel" : MessageLookupByLibrary.simpleMessage("Name"),
+    "pageProfileSaveButton" : MessageLookupByLibrary.simpleMessage("Save profile"),
+    "pageProfileTitle" : MessageLookupByLibrary.simpleMessage("Profile"),
+    "pageStatisticsTitle" : MessageLookupByLibrary.simpleMessage("Statistics")
   };
 }
