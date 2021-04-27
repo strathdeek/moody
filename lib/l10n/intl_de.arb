@@ -1,5 +1,17 @@
 {
+    "appTitle" : "MOODY",
     "pageDashboardGreeting":"Wilkommen zum Moody",
     "pageDashboardHello":"Hallo, ",
-    "pageDashboardGuest":"Gast Nutzer."
+    "pageDashboardGuest":"Gast Nutzer.",
+    "pageDashboardTitle": "Zuhause",
+    "PageSettingsTitle": "Einstellungen",
+    "pageStatisticsTitle": "Statistiken",
+    "pageProfileTitle": "Profil",
+    "pageProfileHeaderGuest": "Gast Nutzer",
+    "pageProfileHeader": "Mein Profil",
+    "pageProfileNameLabel": "Name",
+    "pageProfileLocationLabel": "Ort",
+    "pageProfileDateOfBirthLabel": "Geburtsdatum",
+    "pageProfileCreateButton": "Profil erstellen",
+    "pageProfileSaveButton": "Profil speichern"
 }
