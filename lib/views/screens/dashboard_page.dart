@@ -10,7 +10,7 @@ class DashboardPage extends StatelessWidget {
     return Container(
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Moody'),
+          title: Text('MOODY'),
           actions: [
             IconButton(
                 icon: Icon(Icons.settings),
