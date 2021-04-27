@@ -145,32 +145,6 @@ class _ProfilePageState extends State<ProfilePage> {
                                       : Text('Create profile'))),
                         ],
                       ),
-                      BlocBuilder<UserBloc, UserState>(
-                        builder: (context, state) {
-                          if (state is UserLoadSuccess) {
-                            return Row(
-                              children: [
-                                Expanded(
-                                    child: ElevatedButton(
-                                        onPressed: () {
-                                          context
-                                              .read<UserBloc>()
-                                              .add(UserDeleted());
-                                          setState(() {
-                                            _nameController.clear();
-                                            _locationController.clear();
-                                            _dateController.clear();
-                                            _birthday = null;
-                                          });
-                                        },
-                                        child: Text('Delete profile'))),
-                              ],
-                            );
-                          } else {
-                            return Row();
-                          }
-                        },
-                      ),
                     ],
                   )
                 ],
