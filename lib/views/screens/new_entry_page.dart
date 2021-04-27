@@ -3,6 +3,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 
 import '../../bloc/mood/mood_bloc.dart';
 import '../../data/models/mood.dart';
@@ -13,10 +14,14 @@ class NewEntryPage extends StatefulWidget {
 }
 
 class _NewEntryPageState extends State<NewEntryPage> {
-  double _moodValue = .5;
+  double _moodValue = 50;
   Widget _moodDisplay = Text('Fill this uninitialized space');
   Color _moodColor = Colors.amber;
   DateTime _date = DateTime.now();
+
+  late final TextEditingController _dateController = TextEditingController(
+      text: (DateFormat.yMMMMEEEEd('en_US').format(_date)));
+
   @override
   Widget build(BuildContext context) {
     _moodDisplay = buildMoodDisplay();
@@ -33,26 +38,45 @@ class _NewEntryPageState extends State<NewEntryPage> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               _moodDisplay,
-              TextButton(
-                onPressed: () async {
-                  var date = await showDatePicker(
-                    context: context,
-                    initialDate: DateTime.now(),
-                    firstDate: DateTime(1900),
-                    lastDate: DateTime(2100),
-                  );
-                  setState(() {
-                    _date = date ?? _date;
-                  });
-                },
-                child: Text(
-                  'Date: ' + _date.toString(),
-                  style: TextStyle(fontSize: 18.0),
+              Padding(
+                padding: const EdgeInsets.all(24.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text('Date'),
+                    TextFormField(
+                      textAlign: TextAlign.center,
+                      controller: _dateController,
+                      decoration: InputDecoration(
+                          border: InputBorder.none,
+                          suffixIcon: Icon(Icons.arrow_drop_down),
+                          prefixIcon: Icon(Icons.calendar_today)),
+                      onTap: () async {
+                        var date = await showDatePicker(
+                          context: context,
+                          initialDate: (_date),
+                          firstDate: DateTime(1900),
+                          lastDate: DateTime.now(),
+                        );
+
+                        setState(() {
+                          _date = date ?? _date;
+                        });
+
+                        _dateController.text = (date != null)
+                            ? DateFormat.yMMMMEEEEd('en_US').format(date)
+                            : '';
+                      },
+                    ),
+                  ],
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Slider(
+                child: Slider.adaptive(
+                    min: 0,
+                    max: 100,
+                    label: _moodValue.round().toString(),
                     value: _moodValue,
                     onChanged: (newValue) {
                       setState(() {
@@ -84,16 +108,16 @@ class _NewEntryPageState extends State<NewEntryPage> {
   Widget buildMoodDisplay() {
     var color;
     var mood;
-    if (_moodValue > .8) {
+    if (_moodValue > 80) {
       color = Colors.green;
       mood = MoodClass.awesome;
-    } else if (_moodValue > .6) {
+    } else if (_moodValue > 60) {
       color = Colors.lime;
       mood = MoodClass.good;
-    } else if (_moodValue > .4) {
+    } else if (_moodValue > 40) {
       color = Colors.amber;
       mood = MoodClass.meh;
-    } else if (_moodValue > .2) {
+    } else if (_moodValue > 20) {
       color = Colors.orange;
       mood = MoodClass.bad;
     } else {
