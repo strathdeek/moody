@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:moody/data/constants/navigation.dart';
+import 'package:moody/data/models/user.dart';
 import 'package:moody/views/screens/dashboard_page.dart';
 import 'package:moody/views/screens/profile_page.dart';
 import 'package:moody/views/screens/settings_page.dart';
@@ -12,7 +13,8 @@ Route generateRoute(RouteSettings settings) {
     case StatisticsPageRoute:
       return _buildPageWithNoTransition(() => StatisticsPage(), settings);
     case ProfilePageRoute:
-      return _buildPageWithNoTransition(() => ProfilePage(), settings);
+      return _buildPageWithNoTransition(
+          () => ProfilePage(user: settings.arguments as User?), settings);
     case SettingsPageRoute:
       return MaterialPageRoute(builder: (context) => SettingsPage());
     default:

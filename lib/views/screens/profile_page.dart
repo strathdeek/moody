@@ -1,34 +1,47 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
+
 import 'package:moody/bloc/user/user_bloc.dart';
 import 'package:moody/data/constants/navigation.dart';
+import 'package:moody/data/models/user.dart';
 import 'package:moody/views/widgets/navigation_tray.dart';
 
 class ProfilePage extends StatefulWidget {
+  final User? user;
+  ProfilePage({
+    this.user,
+  });
   @override
   _ProfilePageState createState() => _ProfilePageState();
 }
 
 class _ProfilePageState extends State<ProfilePage> {
   DateTime? _birthday;
-  final TextEditingController _nameController = TextEditingController();
-  final TextEditingController _locationController = TextEditingController();
+  late final TextEditingController _dateController;
+  late final TextEditingController _nameController;
+  late final TextEditingController _locationController;
+  @override
+  void initState() {
+    super.initState();
+    _nameController = TextEditingController(
+        text: widget.user != null ? widget.user?.name : '');
+
+    _locationController = TextEditingController(
+        text: widget.user != null ? widget.user?.location : '');
+
+    _dateController = TextEditingController(
+        text: (widget.user != null && widget.user?.birthDate != null)
+            ? DateFormat.yMMMMd('en_US')
+                .format(widget.user?.birthDate as DateTime)
+            : '');
+  }
 
   @override
   Widget build(BuildContext context) {
-    if (context.read<UserBloc>().state is UserLoadSuccess) {
-      var user = (context.read<UserBloc>().state as UserLoadSuccess).user;
-      _nameController.text = user.name;
-      _locationController.text = user.location ?? '';
-    } else {
-      _nameController.text = '';
-      _locationController.text = '';
-    }
-
     return Scaffold(
       appBar: AppBar(
-        title: Text('Moody'),
+        title: Text('MOODY'),
         actions: [
           IconButton(
               icon: Icon(Icons.settings),
@@ -42,113 +55,123 @@ class _ProfilePageState extends State<ProfilePage> {
           child: BlocBuilder<UserBloc, UserState>(
             builder: (context, state) {
               return Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Profile'),
-                  TextFormField(
-                    controller: _nameController,
-                    decoration: InputDecoration(
-                      labelText: 'Name',
-                    ),
+                  Text(
+                    state is UserLoadSuccess ? 'My Profile' : 'Guest User',
+                    style: Theme.of(context).textTheme.headline3,
                   ),
-                  TextFormField(
-                    decoration: InputDecoration(labelText: 'Location'),
-                    controller: _locationController,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 15),
-                    child: GestureDetector(
-                      onTap: () async {
-                        var date = await showDatePicker(
-                          context: context,
-                          initialDate: (state is UserLoadSuccess)
-                              ? state.user.birthDate ?? DateTime(1992)
-                              : DateTime(1992),
-                          firstDate: DateTime(1900),
-                          lastDate: DateTime.now(),
-                        );
-                        setState(() {
-                          _birthday = date;
-                        });
-                      },
-                      child: Row(
+                  Column(
+                    children: [
+                      TextFormField(
+                        controller: _nameController,
+                        decoration: InputDecoration(
+                          labelText: 'Name',
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      TextFormField(
+                        decoration: InputDecoration(labelText: 'Location'),
+                        controller: _locationController,
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Stack(
                         children: [
-                          Expanded(
+                          TextFormField(
+                            controller: _dateController,
+                            decoration: InputDecoration(
+                              labelText: 'Date of Birth',
+                            ),
+                          ),
+                          GestureDetector(
+                            onTap: () async {
+                              var date = await showDatePicker(
+                                context: context,
+                                initialDate: (state is UserLoadSuccess)
+                                    ? state.user.birthDate ?? DateTime(1992)
+                                    : DateTime(1992),
+                                firstDate: DateTime(1900),
+                                lastDate: DateTime.now(),
+                              );
+
+                              setState(() {
+                                _birthday = date;
+                              });
+
+                              _dateController.text = (date != null)
+                                  ? DateFormat.yMMMMd('en_US').format(date)
+                                  : '';
+                            },
                             child: Container(
-                              height: 30,
-                              child: Text(
-                                _birthday != null
-                                    ? DateFormat.yMMMMd('en_US')
-                                        .format(_birthday!)
-                                    : (state is UserLoadSuccess)
-                                        ? (state.user.birthDate != null)
-                                            ? DateFormat.yMMMMd('en_US')
-                                                .format(state.user.birthDate!)
-                                            : 'Date of birth'
-                                        : 'Date of birth',
-                                style: TextStyle(
-                                    color: Colors.grey.shade700, fontSize: 16),
-                              ),
+                              height: 70,
+                              color: Colors.transparent,
                             ),
                           ),
                         ],
                       ),
-                    ),
-                  ),
-                  Divider(
-                    color: Colors.black,
-                  ),
-                  Row(
-                    children: [
-                      Expanded(
-                          child: ElevatedButton(
-                              onPressed: () {
-                                if (state is UserLoadSuccess) {
-                                  context.read<UserBloc>().add(UserUpdated(
-                                      name: _nameController.text.isNotEmpty
-                                          ? _nameController.text
-                                          : null,
-                                      location:
-                                          _locationController.text.isNotEmpty
-                                              ? _locationController.text
-                                              : null,
-                                      birthdate: _birthday));
-                                } else {
-                                  context.read<UserBloc>().add(UserCreated(
-                                      name: _nameController.text,
-                                      location: _locationController.text,
-                                      birthdate: _birthday));
-                                }
-                              },
-                              child: (state is UserLoadSuccess)
-                                  ? Text('Save')
-                                  : Text('Create profile'))),
                     ],
                   ),
-                  BlocBuilder<UserBloc, UserState>(
-                    builder: (context, state) {
-                      if (state is UserLoadSuccess) {
-                        return Row(
-                          children: [
-                            Expanded(
-                                child: ElevatedButton(
-                                    onPressed: () {
-                                      context
-                                          .read<UserBloc>()
-                                          .add(UserDeleted());
-                                      setState(() {
-                                        _nameController.clear();
-                                        _locationController.clear();
-                                        _birthday = null;
-                                      });
-                                    },
-                                    child: Text('Delete profile'))),
-                          ],
-                        );
-                      } else {
-                        return Row();
-                      }
-                    },
+                  Column(
+                    children: [
+                      Row(
+                        children: [
+                          Expanded(
+                              child: ElevatedButton(
+                                  onPressed: () {
+                                    if (state is UserLoadSuccess) {
+                                      context.read<UserBloc>().add(UserUpdated(
+                                          name: _nameController.text.isNotEmpty
+                                              ? _nameController.text
+                                              : null,
+                                          location: _locationController
+                                                  .text.isNotEmpty
+                                              ? _locationController.text
+                                              : null,
+                                          birthdate: _birthday));
+                                    } else {
+                                      context.read<UserBloc>().add(UserCreated(
+                                          name: _nameController.text,
+                                          location: _locationController.text,
+                                          birthdate: _birthday));
+                                    }
+                                  },
+                                  child: (state is UserLoadSuccess)
+                                      ? Text('Save')
+                                      : Text('Create profile'))),
+                        ],
+                      ),
+                      BlocBuilder<UserBloc, UserState>(
+                        builder: (context, state) {
+                          if (state is UserLoadSuccess) {
+                            return Row(
+                              children: [
+                                Expanded(
+                                    child: ElevatedButton(
+                                        onPressed: () {
+                                          context
+                                              .read<UserBloc>()
+                                              .add(UserDeleted());
+                                          setState(() {
+                                            _nameController.clear();
+                                            _locationController.clear();
+                                            _dateController.clear();
+                                            _birthday = null;
+                                          });
+                                        },
+                                        child: Text('Delete profile'))),
+                              ],
+                            );
+                          } else {
+                            return Row();
+                          }
+                        },
+                      ),
+                    ],
                   )
                 ],
               );
