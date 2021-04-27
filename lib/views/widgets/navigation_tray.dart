@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:moody/bloc/navigation/navigation_cubit.dart';
+import 'package:moody/bloc/user/user_bloc.dart';
 import 'package:moody/data/constants/navigation.dart';
 
 class NavigationTray extends StatelessWidget {
@@ -18,8 +19,12 @@ class NavigationTray extends StatelessWidget {
                 .pushNamedAndRemoveUntil(StatisticsPageRoute, (route) => false);
             break;
           case 2:
-            Navigator.of(context)
-                .pushNamedAndRemoveUntil(ProfilePageRoute, (route) => false);
+            var user = (context.read<UserBloc>().state is UserLoadSuccess)
+                ? (context.read<UserBloc>().state as UserLoadSuccess).user
+                : null;
+            Navigator.of(context).pushNamedAndRemoveUntil(
+                ProfilePageRoute, (route) => false,
+                arguments: user);
             break;
         }
       },
