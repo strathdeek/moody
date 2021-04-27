@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:moody/bloc/user/user_bloc.dart';
 import 'package:moody/data/constants/navigation.dart';
+import 'package:moody/views/screens/new_entry_page.dart';
 import 'package:moody/views/widgets/navigation_tray.dart';
 
 class DashboardPage extends StatelessWidget {
@@ -29,6 +30,15 @@ class DashboardPage extends StatelessWidget {
                 },
               ),
               Text('Welcome to Moody'),
+              TextButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (BuildContext context) {
+                    return NewEntryPage();
+                  }));
+                },
+                child: Text("Add today's mood now!"),
+              )
             ],
           ),
         ),
