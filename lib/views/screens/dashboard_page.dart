@@ -14,9 +14,10 @@ class DashboardPage extends StatelessWidget {
           title: Text('Moody'),
           actions: [
             IconButton(
-                icon: Icon(Icons.settings),
-                onPressed: () =>
-                    Navigator.of(context).pushNamed(SettingsPageRoute))
+              icon: Icon(Icons.settings),
+              onPressed: () =>
+                  Navigator.of(context).pushNamed(SettingsPageRoute),
+            )
           ],
         ),
         body: Center(
@@ -31,12 +32,8 @@ class DashboardPage extends StatelessWidget {
               ),
               Text('Welcome to Moody'),
               TextButton(
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (BuildContext context) {
-                    return NewEntryPage();
-                  }));
-                },
+                onPressed: () =>
+                    Navigator.of(context).pushNamed(NewEntryPageRoute),
                 child: Text("Add today's mood now!"),
               )
             ],
