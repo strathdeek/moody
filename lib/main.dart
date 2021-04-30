@@ -42,6 +42,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      // darkTheme: ThemeData.dark(),
       onGenerateRoute: generateRoute,
       initialRoute: '/',
       localizationsDelegates: [S.delegate],

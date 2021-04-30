@@ -9,7 +9,7 @@ enum MoodType {
 }
 
 extension MoodTypeExtension on MoodType {
-  Color toColor() {
+  MaterialColor toColor() {
     var color;
     switch (this) {
       case MoodType.awesome:
@@ -28,24 +28,13 @@ extension MoodTypeExtension on MoodType {
         color = Colors.red;
         break;
     }
-    return color.shade400;
+    return color;
   }
-}
 
-extension MoodTypeConversion on double {
-  MoodType toMoodType() {
-    var mood;
-    if (this > 80) {
-      mood = MoodType.awesome;
-    } else if (this > 60) {
-      mood = MoodType.good;
-    } else if (this > 40) {
-      mood = MoodType.meh;
-    } else if (this > 20) {
-      mood = MoodType.bad;
-    } else {
-      mood = MoodType.terrible;
-    }
-    return mood;
+  String getTypeName() {
+    var string = toString();
+    var name = string.substring(string.indexOf('.') + 1);
+    name = name[0].toUpperCase() + name.substring(1);
+    return name;
   }
 }

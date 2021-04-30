@@ -17,7 +17,7 @@ class EmoteBanner extends StatelessWidget {
       children: [
         CustomPaint(
           size: Size.fromHeight(460),
-          painter: CurvedPainter(color: moodType.toColor()),
+          painter: CurvedPainter(color: moodType.toColor().shade400),
         ),
         CustomPaint(
           size: Size.fromHeight(400),
