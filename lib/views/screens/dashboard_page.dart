@@ -33,6 +33,7 @@ class DashboardPage extends StatelessWidget {
                 },
               ),
 <<<<<<< HEAD
+<<<<<<< HEAD
               Text('Welcome to Moody'),
               TextButton(
                 onPressed: () =>
@@ -42,6 +43,9 @@ class DashboardPage extends StatelessWidget {
 =======
               Text(S.of(context).pageDashboardGreeting),
 >>>>>>> implementation of internationalisation for german and english
+=======
+              Text(S.of(context).pageDashboardGreeting),
+>>>>>>> 21c288a15065881d4cd211b42aad169fa2a51b48
             ],
           ),
         ),
