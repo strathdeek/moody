@@ -15,5 +15,7 @@
     "pageProfileCreateButton": "Create profile",
     "pageProfileSaveButton": "Save profile",
     "notificationTitle": "How are you?",
-    "notificationDescription": "Have you recorded your mood yet today?"
+    "notificationDescription": "Have you recorded your mood yet today?",
+    "pageSettingsRemindersToggleLabel" : "Reminders",
+    "pageSettingsRemindersToggleDescription" : "Enable or disable reminder notifications"
 }

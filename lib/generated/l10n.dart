@@ -216,6 +216,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Reminders`
+  String get pageSettingsRemindersToggleLabel {
+    return Intl.message(
+      'Reminders',
+      name: 'pageSettingsRemindersToggleLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enable or disable reminder notifications`
+  String get pageSettingsRemindersToggleDescription {
+    return Intl.message(
+      'Enable or disable reminder notifications',
+      name: 'pageSettingsRemindersToggleDescription',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

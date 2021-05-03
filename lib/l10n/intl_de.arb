@@ -15,5 +15,7 @@
     "pageProfileCreateButton": "Profil erstellen",
     "pageProfileSaveButton": "Profil speichern",
     "notificationTitle": "Wie geht's?",
-    "notificationDescription": "Haben Sie heute schon Ihre Stimmung aufgenommen?"
+    "notificationDescription": "Haben Sie heute schon Ihre Stimmung aufgenommen?",
+    "pageSettingsRemindersToggleLabel" : "Erinnerungen",
+    "pageSettingsRemindersToggleDescription" : "Aktivieren oder Deaktivieren von Erinnerungsbenachrichtigungen"
 }

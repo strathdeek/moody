@@ -37,6 +37,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "pageProfileNameLabel" : MessageLookupByLibrary.simpleMessage("Name"),
     "pageProfileSaveButton" : MessageLookupByLibrary.simpleMessage("Profil speichern"),
     "pageProfileTitle" : MessageLookupByLibrary.simpleMessage("Profil"),
+    "pageSettingsRemindersToggleDescription" : MessageLookupByLibrary.simpleMessage("Aktivieren oder Deaktivieren von Erinnerungsbenachrichtigungen"),
+    "pageSettingsRemindersToggleLabel" : MessageLookupByLibrary.simpleMessage("Erinnerungen"),
     "pageStatisticsTitle" : MessageLookupByLibrary.simpleMessage("Statistiken")
   };
 }
