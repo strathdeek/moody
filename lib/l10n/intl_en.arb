@@ -13,5 +13,7 @@
     "pageProfileLocationLabel": "Location",
     "pageProfileDateOfBirthLabel": "Date of Birth",
     "pageProfileCreateButton": "Create profile",
-    "pageProfileSaveButton": "Save profile"
+    "pageProfileSaveButton": "Save profile",
+    "notificationTitle": "How are you?",
+    "notificationDescription": "Have you recorded your mood yet today?"
 }

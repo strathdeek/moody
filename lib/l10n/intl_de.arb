@@ -13,5 +13,7 @@
     "pageProfileLocationLabel": "Ort",
     "pageProfileDateOfBirthLabel": "Geburtsdatum",
     "pageProfileCreateButton": "Profil erstellen",
-    "pageProfileSaveButton": "Profil speichern"
+    "pageProfileSaveButton": "Profil speichern",
+    "notificationTitle": "Wie geht's?",
+    "notificationDescription": "Haben Sie heute schon Ihre Stimmung aufgenommen?"
 }

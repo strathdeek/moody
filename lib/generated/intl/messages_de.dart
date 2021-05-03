@@ -23,6 +23,8 @@ class MessageLookup extends MessageLookupByLibrary {
   static _notInlinedMessages(_) => <String, Function> {
     "PageSettingsTitle" : MessageLookupByLibrary.simpleMessage("Einstellungen"),
     "appTitle" : MessageLookupByLibrary.simpleMessage("MOODY"),
+    "notificationDescription" : MessageLookupByLibrary.simpleMessage("Haben Sie heute schon Ihre Stimmung aufgenommen?"),
+    "notificationTitle" : MessageLookupByLibrary.simpleMessage("Wie geht\'s?"),
     "pageDashboardGreeting" : MessageLookupByLibrary.simpleMessage("Willkommen bei Moody"),
     "pageDashboardGuest" : MessageLookupByLibrary.simpleMessage("Gastnutzer."),
     "pageDashboardHello" : MessageLookupByLibrary.simpleMessage("Hallo, "),
