@@ -1,8 +1,8 @@
 {
     "appTitle" : "MOODY",
-    "pageDashboardGreeting":"Wilkommen zum Moody",
+    "pageDashboardGreeting":"Willkommen bei Moody",
     "pageDashboardHello":"Hallo, ",
-    "pageDashboardGuest":"Gast Nutzer.",
+    "pageDashboardGuest":"Gastnutzer.",
     "pageDashboardTitle": "Zuhause",
     "PageSettingsTitle": "Einstellungen",
     "pageStatisticsTitle": "Statistiken",
