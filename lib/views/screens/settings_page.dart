@@ -11,6 +11,8 @@ class SettingsPage extends StatelessWidget {
             stretch: true,
             expandedHeight: 300,
             backgroundColor: Colors.transparent,
+            iconTheme: IconThemeData(
+                color: Theme.of(context).textTheme.headline4?.color),
             snap: false,
             pinned: true,
             floating: false,
