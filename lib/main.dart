@@ -10,7 +10,6 @@ import 'package:moody/data/providers/user_provider.dart';
 import 'package:moody/data/repositories/mood_repository.dart';
 import 'package:moody/data/repositories/user_repository.dart';
 import 'package:moody/views/screens/router.dart';
-
 import 'generated/l10n.dart';
 
 void main() async {

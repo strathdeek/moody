@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:moody/bloc/user/user_bloc.dart';
 import 'package:moody/data/constants/navigation.dart';
-import 'package:moody/views/screens/new_entry_page.dart';
+import 'package:moody/data/notifications.dart';
 import 'package:moody/generated/l10n.dart';
 import 'package:moody/views/widgets/navigation_tray.dart';
 
 class DashboardPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    initializeNotifications(context);
+
     return Container(
       child: Scaffold(
         appBar: AppBar(
@@ -32,20 +34,7 @@ class DashboardPage extends StatelessWidget {
                           S.of(context).pageDashboardGuest);
                 },
               ),
-<<<<<<< HEAD
-<<<<<<< HEAD
-              Text('Welcome to Moody'),
-              TextButton(
-                onPressed: () =>
-                    Navigator.of(context).pushNamed(NewEntryPageRoute),
-                child: Text("Add today's mood now!"),
-              )
-=======
               Text(S.of(context).pageDashboardGreeting),
->>>>>>> implementation of internationalisation for german and english
-=======
-              Text(S.of(context).pageDashboardGreeting),
->>>>>>> 21c288a15065881d4cd211b42aad169fa2a51b48
             ],
           ),
         ),
