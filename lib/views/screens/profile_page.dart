@@ -5,6 +5,7 @@ import 'package:intl/intl.dart';
 import 'package:moody/bloc/user/user_bloc.dart';
 import 'package:moody/data/constants/navigation.dart';
 import 'package:moody/data/models/user.dart';
+import 'package:moody/generated/l10n.dart';
 import 'package:moody/views/widgets/navigation_tray.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -41,7 +42,7 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('MOODY'),
+        title: Text(S.of(context).appTitle),
         actions: [
           IconButton(
               icon: Icon(Icons.settings),
@@ -59,7 +60,9 @@ class _ProfilePageState extends State<ProfilePage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    state is UserLoadSuccess ? 'My Profile' : 'Guest User',
+                    state is UserLoadSuccess
+                        ? S.of(context).pageProfileHeader
+                        : S.of(context).pageProfileHeaderGuest,
                     style: Theme.of(context).textTheme.headline3,
                   ),
                   Column(
@@ -67,14 +70,15 @@ class _ProfilePageState extends State<ProfilePage> {
                       TextFormField(
                         controller: _nameController,
                         decoration: InputDecoration(
-                          labelText: 'Name',
+                          labelText: S.of(context).pageProfileNameLabel,
                         ),
                       ),
                       SizedBox(
                         height: 20,
                       ),
                       TextFormField(
-                        decoration: InputDecoration(labelText: 'Location'),
+                        decoration: InputDecoration(
+                            labelText: S.of(context).pageProfileLocationLabel),
                         controller: _locationController,
                       ),
                       SizedBox(
@@ -85,7 +89,8 @@ class _ProfilePageState extends State<ProfilePage> {
                           TextFormField(
                             controller: _dateController,
                             decoration: InputDecoration(
-                              labelText: 'Date of Birth',
+                              labelText:
+                                  S.of(context).pageProfileDateOfBirthLabel,
                             ),
                           ),
                           GestureDetector(
@@ -141,8 +146,11 @@ class _ProfilePageState extends State<ProfilePage> {
                                     }
                                   },
                                   child: (state is UserLoadSuccess)
-                                      ? Text('Save')
-                                      : Text('Create profile'))),
+                                      ? Text(
+                                          S.of(context).pageProfileSaveButton)
+                                      : Text(S
+                                          .of(context)
+                                          .pageProfileCreateButton))),
                         ],
                       ),
                     ],

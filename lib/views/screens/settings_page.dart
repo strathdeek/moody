@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:moody/generated/l10n.dart';
 
 class SettingsPage extends StatelessWidget {
   @override
