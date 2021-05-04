@@ -13,5 +13,13 @@
     "pageProfileLocationLabel": "Ort",
     "pageProfileDateOfBirthLabel": "Geburtsdatum",
     "pageProfileCreateButton": "Profil erstellen",
-    "pageProfileSaveButton": "Profil speichern"
+    "pageProfileSaveButton": "Profil speichern",
+    "notificationTitle": "Wie geht's?",
+    "notificationDescription": "Haben Sie heute schon Ihre Stimmung aufgenommen?",
+    "pageSettingsRemindersToggleLabel" : "Erinnerungen",
+    "pageSettingsRemindersToggleDescription" : "Erinnerungen aktivieren/deaktivieren",
+    "pageSettingsRemindersAlertTitle" : "Benachrichtigungsberechtigung",
+    "pageSettingsRemindersAlertDescription" : "Bitte aktivieren Sie Benachrichtigungen für diese App manuell in Ihrer Einstellungs-App.",
+    "pageSettingsRemindersAlertAccept" : "Einstellungen",
+    "pageSettingsRemindersAlertDecline" : "Ablehnen"
 }

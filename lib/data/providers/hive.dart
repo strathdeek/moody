@@ -10,4 +10,5 @@ Future<void> initializeHiveDatabase() async {
   Hive.registerAdapter(UserAdapter());
   await Hive.openBox<Mood>(MoodBoxKey);
   await Hive.openBox<User>(UserBoxKey);
+  await Hive.openBox<bool>(PreferencesBoxKey);
 }
