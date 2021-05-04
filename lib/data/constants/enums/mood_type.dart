@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:moody/generated/l10n.dart';
 
 enum MoodType {
   awesome,
@@ -32,9 +33,24 @@ extension MoodTypeExtension on MoodType {
   }
 
   String getTypeName() {
-    var string = toString();
-    var name = string.substring(string.indexOf('.') + 1);
-    name = name[0].toUpperCase() + name.substring(1);
+    var name;
+    switch (this) {
+      case MoodType.awesome:
+        name = S.current.moodTypeAwesome;
+        break;
+      case MoodType.good:
+        name = S.current.moodTypeGood;
+        break;
+      case MoodType.meh:
+        name = S.current.moodTypeMeh;
+        break;
+      case MoodType.bad:
+        name = S.current.moodTypeBad;
+        break;
+      case MoodType.terrible:
+        name = S.current.moodTypeTerrible;
+        break;
+    }
     return name;
   }
 }

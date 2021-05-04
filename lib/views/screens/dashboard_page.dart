@@ -35,7 +35,7 @@ class DashboardPage extends StatelessWidget {
               TextButton(
                 onPressed: () =>
                     Navigator.of(context).pushNamed(NewEntryPageRoute),
-                child: Text("Add today's mood now!"),
+                child: Text(S.of(context).pageDashboardAddMoodButton),
               ),
               TextButton(
                 onPressed: () =>

@@ -1,11 +1,19 @@
 {
     "appTitle" : "MOODY",
+    "localeKey":"en_US",
     "pageDashboardGreeting":"Welcome to Moody",
     "pageDashboardHello":"Hello, ",
     "pageDashboardGuest":"Guest User.",
     "pageDashboardTitle": "Home",
+    "pageDashboardAddMoodButton": "Add today's mood now!",
     "PageSettingsTitle": "Settings",
     "pageStatisticsTitle": "Statistics",
+    "pageStatisticsType":"By Type",
+    "pageStatisticsMonthly":"Monthly",
+    "pageStatisticsMonthlyNoData":"No Data for this month available.",
+    "pageStatisticsStreakRecord":"Your Record: ",
+    "pageStatisticsStreak":"Streak",
+    "pageStatisticsLoadingError": "Data could not be loaded",
     "pageProfileTitle": "Profile",
     "pageProfileHeaderGuest": "Guest User",
     "pageProfileHeader": "My Profile",
@@ -13,5 +21,10 @@
     "pageProfileLocationLabel": "Location",
     "pageProfileDateOfBirthLabel": "Date of Birth",
     "pageProfileCreateButton": "Create profile",
-    "pageProfileSaveButton": "Save profile"
+    "pageProfileSaveButton": "Save profile",
+    "moodTypeTerrible":"Terrible",
+    "moodTypeBad":"Bad",
+    "moodTypeMeh":"Meh",
+    "moodTypeGood":"Good",
+    "moodTypeAwesome":"Awesome"
 }

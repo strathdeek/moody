@@ -37,27 +37,35 @@ class _StatisticsPageState extends State<StatisticsPage> {
             return ListView(
               children: [
                 TitleCard(
-                  title: 'By Type',
+                  title: S.of(context).pageStatisticsType,
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: SizedBox(
                       height: 220,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: PieChart(
-                          PieChartData(
-                            sections: prepareMoodCounts(state.moodEntries),
-                            sectionsSpace: 4,
-                            startDegreeOffset: -90,
-                            centerSpaceRadius: 50,
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: PieChart(
+                                PieChartData(
+                                  sections:
+                                      prepareMoodCounts(state.moodEntries),
+                                  sectionsSpace: 4,
+                                  startDegreeOffset: -90,
+                                  centerSpaceRadius: 50,
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
+                          prepareLegend()
+                        ],
                       ),
                     ),
                   ),
                 ),
                 TitleCard(
-                  title: 'Monthly',
+                  title: S.of(context).pageStatisticsMonthly,
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
@@ -84,7 +92,8 @@ class _StatisticsPageState extends State<StatisticsPage> {
                               },
                             ),
                             Text(
-                              DateFormat.yMMMM('en_US').format(_date),
+                              DateFormat.yMMMM(S.of(context).localeKey)
+                                  .format(_date),
                               style: Theme.of(context).textTheme.headline5,
                               textAlign: TextAlign.center,
                             ),
@@ -110,7 +119,7 @@ class _StatisticsPageState extends State<StatisticsPage> {
                   ),
                 ),
                 TitleCard(
-                  title: 'Streak',
+                  title: S.of(context).pageStatisticsStreak,
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
@@ -126,10 +135,31 @@ class _StatisticsPageState extends State<StatisticsPage> {
               ],
             );
           }
-          return Text('Data could not be loaded');
+          return Text(S.of(context).pageStatisticsLoadingError);
         },
       ),
       bottomNavigationBar: NavigationTray(),
+    );
+  }
+
+  SizedBox prepareLegend() {
+    return SizedBox(
+      width: 100,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: List.generate(
+            MoodType.values.length,
+            (index) => Row(
+                  children: [
+                    Icon(
+                      Icons.circle,
+                      color: MoodType.values[index].toColor(),
+                    ),
+                    SizedBox(width: 10),
+                    Text(MoodType.values[index].getTypeName()),
+                  ],
+                )),
+      ),
     );
   }
 
@@ -144,7 +174,10 @@ class _StatisticsPageState extends State<StatisticsPage> {
         return PieChartSectionData(
           value: count.toDouble(),
           color: mood.toColor(),
-          title: mood.getTypeName(),
+          title:
+              (count / moodEntries.length * 100).roundToDigits(1).toString() +
+                  '%',
+          // title: mood.getTypeName(),
           radius: 50,
         );
       },
@@ -157,7 +190,7 @@ class _StatisticsPageState extends State<StatisticsPage> {
         .toList();
 
     if (moods.isEmpty) {
-      return Center(child: Text('No Data for this month available.'));
+      return Center(child: Text(S.of(context).pageStatisticsMonthlyNoData));
     }
 
     moods.sort((a, b) => a.date.compareTo(b.date));
@@ -225,7 +258,7 @@ class _StatisticsPageState extends State<StatisticsPage> {
           style: Theme.of(context).textTheme.headline6,
         ),
         Text(
-          'Your Record: ' + longestStreak.toString(),
+          S.of(context).pageStatisticsStreakRecord + longestStreak.toString(),
         ),
       ],
     );
