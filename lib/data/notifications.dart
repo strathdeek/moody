@@ -19,8 +19,6 @@ Future<void> initializeNotifications(BuildContext context) async {
   await _flutterLocalNotificationsPlugin.initialize(
     initializationSettings,
   );
-
-  await scheduleDailyNotifications(context);
 }
 
 Future<void> scheduleDailyNotifications(BuildContext context) async {
