@@ -54,11 +54,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "pageSettingsRemindersAlertDescription":
             MessageLookupByLibrary.simpleMessage(
                 "Bitte aktivieren Sie Benachrichtigungen für diese App manuell in Ihrer Einstellungs-App."),
-        "pageSettingsRemindersAlertTitle":
-            MessageLookupByLibrary.simpleMessage("Erinnerungsrechte abgelehnt"),
+        "pageSettingsRemindersAlertTitle": MessageLookupByLibrary.simpleMessage(
+            "Benachrichtigungsberechtigung"),
         "pageSettingsRemindersToggleDescription":
             MessageLookupByLibrary.simpleMessage(
-                "Aktivieren oder Deaktivieren von Erinnerungsbenachrichtigungen"),
+                "Erinnerungen aktivieren/deaktivieren"),
         "pageSettingsRemindersToggleLabel":
             MessageLookupByLibrary.simpleMessage("Erinnerungen"),
         "pageStatisticsTitle":
