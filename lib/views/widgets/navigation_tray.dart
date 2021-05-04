@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:moody/bloc/navigation/navigation_cubit.dart';
 import 'package:moody/bloc/user/user_bloc.dart';
 import 'package:moody/data/constants/navigation.dart';
+import 'package:moody/generated/l10n.dart';
 
 class NavigationTray extends StatelessWidget {
   @override
@@ -33,15 +34,15 @@ class NavigationTray extends StatelessWidget {
           items: [
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
-              label: 'Home',
+              label: S.of(context).pageDashboardTitle,
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.bar_chart),
-              label: 'Statistics',
+              label: S.of(context).pageStatisticsTitle,
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.person),
-              label: 'Profile',
+              label: S.of(context).pageProfileTitle,
             ),
           ],
           onTap: (value) =>

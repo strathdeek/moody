@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:moody/bloc/mood/mood_bloc.dart';
 import 'package:moody/bloc/navigation/navigation_cubit.dart';
 import 'package:moody/bloc/user/user_bloc.dart';
@@ -45,7 +46,12 @@ class MyApp extends StatelessWidget {
       // darkTheme: ThemeData.dark(),
       onGenerateRoute: generateRoute,
       initialRoute: '/',
-      localizationsDelegates: [S.delegate],
+      localizationsDelegates: [
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
       supportedLocales: S.delegate.supportedLocales,
     );
   }

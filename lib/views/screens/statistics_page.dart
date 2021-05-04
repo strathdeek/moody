@@ -7,6 +7,7 @@ import 'package:moody/data/extensions.dart';
 import 'package:moody/data/constants/enums/mood_type.dart';
 import 'package:moody/data/constants/navigation.dart';
 import 'package:moody/data/models/mood.dart';
+import 'package:moody/generated/l10n.dart';
 import 'package:moody/views/widgets/navigation_tray.dart';
 import 'package:moody/views/widgets/title_card.dart';
 
@@ -22,7 +23,7 @@ class _StatisticsPageState extends State<StatisticsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('MOODY'),
+        title: Text(S.of(context).appTitle),
         actions: [
           IconButton(
               icon: Icon(Icons.settings),

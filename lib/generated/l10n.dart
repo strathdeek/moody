@@ -47,6 +47,16 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `MOODY`
+  String get appTitle {
+    return Intl.message(
+      'MOODY',
+      name: 'appTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Welcome to Moody`
   String get pageDashboardGreeting {
     return Intl.message(
@@ -72,6 +82,116 @@ class S {
     return Intl.message(
       'Guest User.',
       name: 'pageDashboardGuest',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Home`
+  String get pageDashboardTitle {
+    return Intl.message(
+      'Home',
+      name: 'pageDashboardTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get PageSettingsTitle {
+    return Intl.message(
+      'Settings',
+      name: 'PageSettingsTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Statistics`
+  String get pageStatisticsTitle {
+    return Intl.message(
+      'Statistics',
+      name: 'pageStatisticsTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Profile`
+  String get pageProfileTitle {
+    return Intl.message(
+      'Profile',
+      name: 'pageProfileTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Guest User`
+  String get pageProfileHeaderGuest {
+    return Intl.message(
+      'Guest User',
+      name: 'pageProfileHeaderGuest',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My Profile`
+  String get pageProfileHeader {
+    return Intl.message(
+      'My Profile',
+      name: 'pageProfileHeader',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name`
+  String get pageProfileNameLabel {
+    return Intl.message(
+      'Name',
+      name: 'pageProfileNameLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Location`
+  String get pageProfileLocationLabel {
+    return Intl.message(
+      'Location',
+      name: 'pageProfileLocationLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Date of Birth`
+  String get pageProfileDateOfBirthLabel {
+    return Intl.message(
+      'Date of Birth',
+      name: 'pageProfileDateOfBirthLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create profile`
+  String get pageProfileCreateButton {
+    return Intl.message(
+      'Create profile',
+      name: 'pageProfileCreateButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save profile`
+  String get pageProfileSaveButton {
+    return Intl.message(
+      'Save profile',
+      name: 'pageProfileSaveButton',
       desc: '',
       args: [],
     );
