@@ -37,64 +37,89 @@ class _StatisticsPageState extends State<StatisticsPage> {
               children: [
                 TitleCard(
                   title: 'By Type',
-                  child: SizedBox(
-                    height: 200,
-                    child: PieChart(
-                      PieChartData(
-                        sections: prepareMoodCounts(state.moodEntries),
-                        sectionsSpace: 5,
-                        startDegreeOffset: -90,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SizedBox(
+                      height: 220,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: PieChart(
+                          PieChartData(
+                            sections: prepareMoodCounts(state.moodEntries),
+                            sectionsSpace: 4,
+                            startDegreeOffset: -90,
+                            centerSpaceRadius: 50,
+                          ),
+                        ),
                       ),
                     ),
                   ),
                 ),
                 TitleCard(
                   title: 'Monthly',
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height: 200,
-                        child: LineChart(
-                            prepareMonthlyGraph(state.moodEntries, _date)),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          IconButton(
-                            icon: Icon(
-                              Icons.arrow_back,
-                              color:
-                                  Theme.of(context).textTheme.headline5?.color,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        SizedBox(
+                            height: 220,
+                            child:
+                                prepareMonthlyGraph(state.moodEntries, _date)),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            IconButton(
+                              icon: Icon(
+                                Icons.arrow_back,
+                                color: Theme.of(context)
+                                    .textTheme
+                                    .headline5
+                                    ?.color,
+                              ),
+                              onPressed: () {
+                                setState(() {
+                                  _date = DateTime(_date.year, _date.month - 1);
+                                });
+                              },
                             ),
-                            onPressed: () {
-                              setState(() {
-                                _date = DateTime(_date.year, _date.month - 1);
-                              });
-                            },
-                          ),
-                          Text(
-                            DateFormat.yMMMM('en_US').format(_date),
-                            style: Theme.of(context).textTheme.headline5,
-                            textAlign: TextAlign.center,
-                          ),
-                          IconButton(
-                            icon: Icon(
-                              Icons.arrow_forward,
-                              color: Theme.of(context)
-                                      .textTheme
-                                      .headline5
-                                      ?.color ??
-                                  Colors.black,
+                            Text(
+                              DateFormat.yMMMM('en_US').format(_date),
+                              style: Theme.of(context).textTheme.headline5,
+                              textAlign: TextAlign.center,
                             ),
-                            onPressed: () {
-                              setState(() {
-                                _date = DateTime(_date.year, _date.month + 1);
-                              });
-                            },
-                          ),
-                        ],
-                      ),
-                    ],
+                            IconButton(
+                              icon: Icon(
+                                Icons.arrow_forward,
+                                color: Theme.of(context)
+                                        .textTheme
+                                        .headline5
+                                        ?.color ??
+                                    Colors.black,
+                              ),
+                              onPressed: () {
+                                setState(() {
+                                  _date = DateTime(_date.year, _date.month + 1);
+                                });
+                              },
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                TitleCard(
+                  title: 'Streak',
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          height: 60,
+                          child: prepareStreakCounter(state.moodEntries),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ],
@@ -108,52 +133,100 @@ class _StatisticsPageState extends State<StatisticsPage> {
   }
 
   List<PieChartSectionData> prepareMoodCounts(List<Mood> moodEntries) {
-    return List.generate(MoodType.values.length, (index) {
-      var mood = MoodType.values[index];
-      var count = moodEntries
-          .where((element) => element.score.toMoodType() == mood)
-          .length;
-      return PieChartSectionData(
+    return List.generate(
+      MoodType.values.length,
+      (index) {
+        var mood = MoodType.values[index];
+        var count = moodEntries
+            .where((element) => element.score.toMoodType() == mood)
+            .length;
+        return PieChartSectionData(
           value: count.toDouble(),
           color: mood.toColor(),
-          title: mood.getTypeName());
-    });
+          title: mood.getTypeName(),
+          radius: 50,
+        );
+      },
+    );
   }
 
-  LineChartData prepareMonthlyGraph(List<Mood> moodEntries, DateTime month) {
+  Widget prepareMonthlyGraph(List<Mood> moodEntries, DateTime month) {
     var moods = moodEntries
         .where((element) => element.date.month == month.month)
         .toList();
+
+    if (moods.isEmpty) {
+      return Center(child: Text('No Data for this month available.'));
+    }
+
     moods.sort((a, b) => a.date.compareTo(b.date));
 
-    return LineChartData(
-      lineBarsData: [
-        LineChartBarData(
-          spots: List.generate(
-            moods.length,
-            (index) => FlSpot(
-              moods[index].date.day.toDouble(),
-              moods[index].score,
+    return LineChart(
+      LineChartData(
+        maxX: DateTime(month.year, month.month + 1, 0).day.toDouble(),
+        maxY: 100.0,
+        minX: 1,
+        minY: 0,
+        lineBarsData: [
+          LineChartBarData(
+            spots: List.generate(
+              moods.length,
+              (index) => FlSpot(
+                moods[index].date.day.toDouble(),
+                moods[index].score,
+              ),
+            ),
+            colors: List.generate(
+              MoodType.values.length,
+              (index) => MoodType.values[index].toColor(),
+            ),
+            preventCurveOverShooting: true,
+            gradientFrom: Offset(0, 0),
+            gradientTo: Offset(0, 1),
+            colorStops: [.2, .4, .6, .8, 1],
+            isStepLineChart: true,
+            barWidth: 3.5,
+            dotData: FlDotData(
+              show: false,
             ),
           ),
-          colors: List.generate(
-            MoodType.values.length,
-            (index) => MoodType.values[index].toColor(),
-          ),
-          preventCurveOverShooting: true,
-          gradientFrom: Offset(0, 0),
-          gradientTo: Offset(0, 1),
-          colorStops: [.2, .4, .6, .8, 1],
-          isStepLineChart: true,
-          barWidth: 3.5,
-          dotData: FlDotData(
-            show: false,
-          ),
+        ],
+        titlesData: FlTitlesData(
+            leftTitles: SideTitles(interval: 20, showTitles: true)),
+        gridData: FlGridData(
+          horizontalInterval: 10,
+        ),
+      ),
+    );
+  }
+
+  Widget prepareStreakCounter(List<Mood> moodEntries) {
+    moodEntries.sort((a, b) => b.date.compareTo(a.date));
+    var currentStreak = 0;
+    var longestStreak = 0;
+    var newestStreak;
+    var i;
+    for (i = 0; i < moodEntries.length - 1; i++) {
+      var diff = moodEntries[i].date.difference(moodEntries[i + 1].date);
+      currentStreak++;
+      if (diff.inDays >= 2) {
+        longestStreak =
+            longestStreak < currentStreak ? currentStreak : longestStreak;
+        newestStreak = newestStreak ?? currentStreak;
+        currentStreak = 0;
+      }
+    }
+
+    return Column(
+      children: [
+        Text(
+          newestStreak.toString(),
+          style: Theme.of(context).textTheme.headline6,
+        ),
+        Text(
+          'Your Record: ' + longestStreak.toString(),
         ),
       ],
-      titlesData:
-          FlTitlesData(leftTitles: SideTitles(interval: 20, showTitles: true)),
-      gridData: FlGridData(horizontalInterval: 10),
     );
   }
 }
