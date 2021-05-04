@@ -47,6 +47,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "pageProfileSaveButton":
             MessageLookupByLibrary.simpleMessage("Profil speichern"),
         "pageProfileTitle": MessageLookupByLibrary.simpleMessage("Profil"),
+        "pageSettingsDarkModeToggleDescription":
+            MessageLookupByLibrary.simpleMessage("Dunkelmodus aktivieren"),
+        "pageSettingsDarkModeToggleLabel":
+            MessageLookupByLibrary.simpleMessage("Dunkelmodus"),
+        "pageSettingsLightModeToggleDescription":
+            MessageLookupByLibrary.simpleMessage("Hellmodus aktivieren"),
+        "pageSettingsLightModeToggleLabel":
+            MessageLookupByLibrary.simpleMessage("Hellmodus"),
         "pageSettingsRemindersAlertAccept":
             MessageLookupByLibrary.simpleMessage("Einstellungen"),
         "pageSettingsRemindersAlertDecline":
@@ -61,6 +69,13 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Erinnerungen aktivieren/deaktivieren"),
         "pageSettingsRemindersToggleLabel":
             MessageLookupByLibrary.simpleMessage("Erinnerungen"),
+        "pageSettingsSystemModeToggleDescription":
+            MessageLookupByLibrary.simpleMessage("System Standard"),
+        "pageSettingsSystemModeToggleLabel":
+            MessageLookupByLibrary.simpleMessage("System"),
+        "pageSettingsThemeDescription": MessageLookupByLibrary.simpleMessage(
+            "Entschieden zwischen dunkel, hell, oder system standard Themen"),
+        "pageSettingsThemeLabel": MessageLookupByLibrary.simpleMessage("Thema"),
         "pageStatisticsTitle":
             MessageLookupByLibrary.simpleMessage("Statistiken")
       };

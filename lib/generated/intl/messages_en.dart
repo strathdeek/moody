@@ -46,6 +46,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "pageProfileSaveButton":
             MessageLookupByLibrary.simpleMessage("Save profile"),
         "pageProfileTitle": MessageLookupByLibrary.simpleMessage("Profile"),
+        "pageSettingsDarkModeToggleDescription":
+            MessageLookupByLibrary.simpleMessage("Enable dark mode"),
+        "pageSettingsDarkModeToggleLabel":
+            MessageLookupByLibrary.simpleMessage("Dark Mode"),
+        "pageSettingsLightModeToggleDescription":
+            MessageLookupByLibrary.simpleMessage("Enable light mode"),
+        "pageSettingsLightModeToggleLabel":
+            MessageLookupByLibrary.simpleMessage("Light Mode"),
         "pageSettingsRemindersAlertAccept":
             MessageLookupByLibrary.simpleMessage("Settings"),
         "pageSettingsRemindersAlertDecline":
@@ -60,6 +68,13 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Enable or disable reminder notifications"),
         "pageSettingsRemindersToggleLabel":
             MessageLookupByLibrary.simpleMessage("Reminders"),
+        "pageSettingsSystemModeToggleDescription":
+            MessageLookupByLibrary.simpleMessage("Use default system theme"),
+        "pageSettingsSystemModeToggleLabel":
+            MessageLookupByLibrary.simpleMessage("Default"),
+        "pageSettingsThemeDescription": MessageLookupByLibrary.simpleMessage(
+            "Choose between dark, light, and system default themes"),
+        "pageSettingsThemeLabel": MessageLookupByLibrary.simpleMessage("Theme"),
         "pageStatisticsTitle":
             MessageLookupByLibrary.simpleMessage("Statistics")
       };
