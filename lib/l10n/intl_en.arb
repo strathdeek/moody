@@ -14,6 +14,7 @@
     "pageStatisticsStreakRecord":"Your Record: ",
     "pageStatisticsStreak":"Streak",
     "pageStatisticsLoadingError": "Data could not be loaded",
+    "pageEntryListNoData" : "No entries available.",
     "pageProfileTitle": "Profile",
     "pageProfileHeaderGuest": "Guest User",
     "pageProfileHeader": "My Profile",

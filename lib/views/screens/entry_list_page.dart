@@ -5,6 +5,7 @@ import 'package:moody/bloc/mood/mood_bloc.dart';
 import 'package:moody/data/constants/navigation.dart';
 import 'package:moody/data/extensions.dart';
 import 'package:moody/data/models/mood.dart';
+import 'package:moody/generated/l10n.dart';
 import 'package:moody/views/widgets/navigation_tray.dart';
 import 'package:moody/data/constants/enums/mood_type.dart';
 
@@ -20,7 +21,7 @@ class _EntryListPageState extends State<EntryListPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('MOODY'),
+        title: Text(S.of(context).appTitle),
         actions: [
           IconButton(
               icon: Icon(Icons.settings),
@@ -36,6 +37,7 @@ class _EntryListPageState extends State<EntryListPage> {
             snap: false,
             pinned: true,
             floating: false,
+            automaticallyImplyLeading: false,
             title: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -51,7 +53,7 @@ class _EntryListPageState extends State<EntryListPage> {
                   },
                 ),
                 Text(
-                  DateFormat.yMMMM('en_US').format(_date),
+                  DateFormat.yMMMM(S.of(context).localeKey).format(_date),
                   style: Theme.of(context).textTheme.headline4,
                   textAlign: TextAlign.center,
                 ),
@@ -89,7 +91,7 @@ class _EntryListPageState extends State<EntryListPage> {
                   delegate: SliverChildListDelegate(tiles),
                 );
               } else {
-                return Text('No entries available.');
+                return Text(S.of(context).pageEntryListNoData);
               }
             },
           ),
@@ -101,14 +103,12 @@ class _EntryListPageState extends State<EntryListPage> {
 
   Widget visualizeMood(Mood mood) {
     return Card(
-      // color: mood.score.toMoodType().toColor().shade400,
       shadowColor: mood.score.toMoodType().toColor().shade600,
       elevation: 4,
       shape: RoundedRectangleBorder(
         side: BorderSide(width: 0.2),
         borderRadius: BorderRadius.circular(15),
       ),
-
       child: Column(
         children: [
           Card(
@@ -121,7 +121,8 @@ class _EntryListPageState extends State<EntryListPage> {
             child: TextFormField(
               textAlign: TextAlign.center,
               controller: TextEditingController(
-                  text: (DateFormat.yMMMMEEEEd('en_US').format(mood.date))),
+                  text: (DateFormat.yMMMMEEEEd(S.of(context).localeKey)
+                      .format(mood.date))),
               decoration: InputDecoration(
                 border: InputBorder.none,
               ),
@@ -135,7 +136,6 @@ class _EntryListPageState extends State<EntryListPage> {
                 Text(
                   mood.score.roundToDigits(1).toString(),
                   style: TextStyle(
-                    // color: mood.score.toMoodType().toColor(),
                     fontSize: Theme.of(context).textTheme.headline5?.fontSize,
                   ),
                 ),

@@ -37,6 +37,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Guest User."),
         "pageDashboardHello": MessageLookupByLibrary.simpleMessage("Hello, "),
         "pageDashboardTitle": MessageLookupByLibrary.simpleMessage("Home"),
+        "pageEntryListNoData":
+            MessageLookupByLibrary.simpleMessage("No entries available."),
         "pageProfileCreateButton":
             MessageLookupByLibrary.simpleMessage("Create profile"),
         "pageProfileDateOfBirthLabel":

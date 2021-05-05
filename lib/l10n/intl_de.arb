@@ -14,6 +14,7 @@
     "pageStatisticsStreakRecord":"Dein Rekord: ",
     "pageStatisticsStreak":"Serie",
     "pageStatisticsLoadingError": "Daten konnten nicht geladen werden",
+    "pageEntryListNoData" : "Keine Einträge verfügbar.",
     "pageProfileTitle": "Profil",
     "pageProfileHeaderGuest": "Gast Nutzer",
     "pageProfileHeader": "Mein Profil",

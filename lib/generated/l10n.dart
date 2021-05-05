@@ -200,6 +200,16 @@ class S {
     );
   }
 
+  /// `No entries available.`
+  String get pageEntryListNoData {
+    return Intl.message(
+      'No entries available.',
+      name: 'pageEntryListNoData',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Profile`
   String get pageProfileTitle {
     return Intl.message(
