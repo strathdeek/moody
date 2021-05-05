@@ -30,6 +30,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "moodTypeGood": MessageLookupByLibrary.simpleMessage("Gut"),
         "moodTypeMeh": MessageLookupByLibrary.simpleMessage("Meh"),
         "moodTypeTerrible": MessageLookupByLibrary.simpleMessage("Schrecklich"),
+        "notificationDescription": MessageLookupByLibrary.simpleMessage(
+            "Haben Sie heute schon Ihre Stimmung aufgenommen?"),
+        "notificationTitle":
+            MessageLookupByLibrary.simpleMessage("Wie geht\'s?"),
         "pageDashboardAddMoodButton": MessageLookupByLibrary.simpleMessage(
             "Füge deine heutige Stimmung hinzu!"),
         "pageDashboardGreeting":
@@ -53,6 +57,20 @@ class MessageLookup extends MessageLookupByLibrary {
         "pageProfileSaveButton":
             MessageLookupByLibrary.simpleMessage("Profil speichern"),
         "pageProfileTitle": MessageLookupByLibrary.simpleMessage("Profil"),
+        "pageSettingsRemindersAlertAccept":
+            MessageLookupByLibrary.simpleMessage("Einstellungen"),
+        "pageSettingsRemindersAlertDecline":
+            MessageLookupByLibrary.simpleMessage("Ablehnen"),
+        "pageSettingsRemindersAlertDescription":
+            MessageLookupByLibrary.simpleMessage(
+                "Bitte aktivieren Sie Benachrichtigungen für diese App manuell in Ihrer Einstellungs-App."),
+        "pageSettingsRemindersAlertTitle": MessageLookupByLibrary.simpleMessage(
+            "Benachrichtigungsberechtigung"),
+        "pageSettingsRemindersToggleDescription":
+            MessageLookupByLibrary.simpleMessage(
+                "Erinnerungen aktivieren/deaktivieren"),
+        "pageSettingsRemindersToggleLabel":
+            MessageLookupByLibrary.simpleMessage("Erinnerungen"),
         "pageStatisticsLoadingError": MessageLookupByLibrary.simpleMessage(
             "Daten konnten nicht geladen werden"),
         "pageStatisticsMonthly":

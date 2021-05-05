@@ -339,6 +339,86 @@ class S {
       args: [],
     );
   }
+
+  /// `How are you?`
+  String get notificationTitle {
+    return Intl.message(
+      'How are you?',
+      name: 'notificationTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Have you recorded your mood yet today?`
+  String get notificationDescription {
+    return Intl.message(
+      'Have you recorded your mood yet today?',
+      name: 'notificationDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reminders`
+  String get pageSettingsRemindersToggleLabel {
+    return Intl.message(
+      'Reminders',
+      name: 'pageSettingsRemindersToggleLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enable or disable reminder notifications`
+  String get pageSettingsRemindersToggleDescription {
+    return Intl.message(
+      'Enable or disable reminder notifications',
+      name: 'pageSettingsRemindersToggleDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reminders Permission Declined`
+  String get pageSettingsRemindersAlertTitle {
+    return Intl.message(
+      'Reminders Permission Declined',
+      name: 'pageSettingsRemindersAlertTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please manually enable notifications for this app in your settings app.`
+  String get pageSettingsRemindersAlertDescription {
+    return Intl.message(
+      'Please manually enable notifications for this app in your settings app.',
+      name: 'pageSettingsRemindersAlertDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get pageSettingsRemindersAlertAccept {
+    return Intl.message(
+      'Settings',
+      name: 'pageSettingsRemindersAlertAccept',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get pageSettingsRemindersAlertDecline {
+    return Intl.message(
+      'Cancel',
+      name: 'pageSettingsRemindersAlertDecline',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

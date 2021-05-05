@@ -29,6 +29,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "moodTypeGood": MessageLookupByLibrary.simpleMessage("Good"),
         "moodTypeMeh": MessageLookupByLibrary.simpleMessage("Meh"),
         "moodTypeTerrible": MessageLookupByLibrary.simpleMessage("Terrible"),
+        "notificationDescription": MessageLookupByLibrary.simpleMessage(
+            "Have you recorded your mood yet today?"),
+        "notificationTitle":
+            MessageLookupByLibrary.simpleMessage("How are you?"),
         "pageDashboardAddMoodButton":
             MessageLookupByLibrary.simpleMessage("Add today\'s mood now!"),
         "pageDashboardGreeting":
@@ -52,6 +56,20 @@ class MessageLookup extends MessageLookupByLibrary {
         "pageProfileSaveButton":
             MessageLookupByLibrary.simpleMessage("Save profile"),
         "pageProfileTitle": MessageLookupByLibrary.simpleMessage("Profile"),
+        "pageSettingsRemindersAlertAccept":
+            MessageLookupByLibrary.simpleMessage("Settings"),
+        "pageSettingsRemindersAlertDecline":
+            MessageLookupByLibrary.simpleMessage("Cancel"),
+        "pageSettingsRemindersAlertDescription":
+            MessageLookupByLibrary.simpleMessage(
+                "Please manually enable notifications for this app in your settings app."),
+        "pageSettingsRemindersAlertTitle": MessageLookupByLibrary.simpleMessage(
+            "Reminders Permission Declined"),
+        "pageSettingsRemindersToggleDescription":
+            MessageLookupByLibrary.simpleMessage(
+                "Enable or disable reminder notifications"),
+        "pageSettingsRemindersToggleLabel":
+            MessageLookupByLibrary.simpleMessage("Reminders"),
         "pageStatisticsLoadingError":
             MessageLookupByLibrary.simpleMessage("Data could not be loaded"),
         "pageStatisticsMonthly":

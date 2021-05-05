@@ -27,5 +27,13 @@
     "moodTypeBad":"Schlecht",
     "moodTypeMeh":"Meh",
     "moodTypeGood":"Gut",
-    "moodTypeAwesome":"Hervorragend"
+    "moodTypeAwesome":"Hervorragend",
+    "notificationTitle": "Wie geht's?",
+    "notificationDescription": "Haben Sie heute schon Ihre Stimmung aufgenommen?",
+    "pageSettingsRemindersToggleLabel" : "Erinnerungen",
+    "pageSettingsRemindersToggleDescription" : "Erinnerungen aktivieren/deaktivieren",
+    "pageSettingsRemindersAlertTitle" : "Benachrichtigungsberechtigung",
+    "pageSettingsRemindersAlertDescription" : "Bitte aktivieren Sie Benachrichtigungen für diese App manuell in Ihrer Einstellungs-App.",
+    "pageSettingsRemindersAlertAccept" : "Einstellungen",
+    "pageSettingsRemindersAlertDecline" : "Ablehnen"
 }

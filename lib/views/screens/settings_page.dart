@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:moody/bloc/reminder/reminder_cubit.dart';
+import 'package:moody/generated/l10n.dart';
 
 class SettingsPage extends StatelessWidget {
   @override
@@ -47,6 +50,23 @@ class SettingsPage extends StatelessWidget {
                   value: true,
                   onChanged: (bool value) {},
                 ),
+                BlocBuilder<ReminderCubit, ReminderState>(
+                  builder: (context, state) {
+                    return SwitchListTile(
+                      title:
+                          Text(S.of(context).pageSettingsRemindersToggleLabel),
+                      subtitle: Text(
+                          S.of(context).pageSettingsRemindersToggleDescription),
+                      // to be changed in DarkMode ticket.
+                      value: state is ReminderEnabled,
+                      onChanged: (bool value) {
+                        context
+                            .read<ReminderCubit>()
+                            .setRemindersEnabled(value, context);
+                      },
+                    );
+                  },
+                )
               ],
             ),
           ),
