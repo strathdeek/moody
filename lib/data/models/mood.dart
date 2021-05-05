@@ -59,4 +59,8 @@ class Mood extends Equatable {
 
   @override
   List<Object> get props => [id, score, date];
+
+  List<dynamic> toValueList() {
+    return <dynamic>[date.millisecondsSinceEpoch, score];
+  }
 }

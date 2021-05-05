@@ -35,3 +35,5 @@ class MoodUpdated extends MoodEvent {
 }
 
 class AppStart extends MoodEvent {}
+
+class ExportEntries extends MoodEvent {}

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:moody/bloc/mood/mood_bloc.dart';
 import 'package:moody/bloc/reminder/reminder_cubit.dart';
 import 'package:moody/bloc/theme/theme_cubit.dart';
 import 'package:moody/generated/l10n.dart';
@@ -42,10 +43,15 @@ class SettingsPage extends StatelessWidget {
                   ),
                   Divider(),
                   ListTile(
-                    enabled: false,
                     title: Text('Export CSV'),
-                    subtitle:
-                        Text('Coming soon: export your entries to a CSV file'),
+                    subtitle: Text('Export your entries to a CSV file.'),
+                    onTap: () {
+                      BlocProvider.of<MoodBloc>(context).add(ExportEntries());
+                      ScaffoldMessenger.of(context).hideCurrentSnackBar();
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                        content: Text('Exported to CSV'),
+                      ));
+                    },
                   ),
                   Divider(),
                   ListTile(

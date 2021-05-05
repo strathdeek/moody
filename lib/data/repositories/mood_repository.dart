@@ -18,6 +18,10 @@ class MoodRepository {
     _moodProvider.delete(mood);
   }
 
+  void export() {
+    _moodProvider.export();
+  }
+
   List<Mood> get() {
     return _moodProvider.get();
   }

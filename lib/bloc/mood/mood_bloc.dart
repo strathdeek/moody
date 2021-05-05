@@ -60,5 +60,8 @@ class MoodBloc extends Bloc<MoodEvent, MoodState> {
         }
       }
     }
+    if (event is ExportEntries) {
+      _moodRepository.export();
+    }
   }
 }
