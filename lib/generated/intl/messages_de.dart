@@ -48,13 +48,13 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Profil speichern"),
         "pageProfileTitle": MessageLookupByLibrary.simpleMessage("Profil"),
         "pageSettingsDarkModeToggleDescription":
-            MessageLookupByLibrary.simpleMessage("Dunkelmodus aktivieren"),
+            MessageLookupByLibrary.simpleMessage("Dunkles Design aktivieren"),
         "pageSettingsDarkModeToggleLabel":
-            MessageLookupByLibrary.simpleMessage("Dunkelmodus"),
+            MessageLookupByLibrary.simpleMessage("Dunkles Design"),
         "pageSettingsLightModeToggleDescription":
-            MessageLookupByLibrary.simpleMessage("Hellmodus aktivieren"),
+            MessageLookupByLibrary.simpleMessage("Helles Design aktivieren"),
         "pageSettingsLightModeToggleLabel":
-            MessageLookupByLibrary.simpleMessage("Hellmodus"),
+            MessageLookupByLibrary.simpleMessage("Helles Design"),
         "pageSettingsRemindersAlertAccept":
             MessageLookupByLibrary.simpleMessage("Einstellungen"),
         "pageSettingsRemindersAlertDecline":
@@ -70,12 +70,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "pageSettingsRemindersToggleLabel":
             MessageLookupByLibrary.simpleMessage("Erinnerungen"),
         "pageSettingsSystemModeToggleDescription":
-            MessageLookupByLibrary.simpleMessage("System Standard"),
+            MessageLookupByLibrary.simpleMessage("System Design"),
         "pageSettingsSystemModeToggleLabel":
             MessageLookupByLibrary.simpleMessage("System"),
         "pageSettingsThemeDescription": MessageLookupByLibrary.simpleMessage(
-            "Entschieden zwischen dunkel, hell, oder system standard Themen"),
-        "pageSettingsThemeLabel": MessageLookupByLibrary.simpleMessage("Thema"),
+            "Entschieden zwischen dunkeles, helles, oder system standard Design"),
+        "pageSettingsThemeLabel":
+            MessageLookupByLibrary.simpleMessage("Design"),
         "pageStatisticsTitle":
             MessageLookupByLibrary.simpleMessage("Statistiken")
       };

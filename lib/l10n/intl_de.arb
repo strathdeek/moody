@@ -22,12 +22,12 @@
     "pageSettingsRemindersAlertDescription" : "Bitte aktivieren Sie Benachrichtigungen für diese App manuell in Ihrer Einstellungs-App.",
     "pageSettingsRemindersAlertAccept" : "Einstellungen",
     "pageSettingsRemindersAlertDecline" : "Ablehnen",
-    "pageSettingsDarkModeToggleLabel" : "Dunkelmodus",
-    "pageSettingsDarkModeToggleDescription" : "Dunkelmodus aktivieren",
-    "pageSettingsLightModeToggleLabel" : "Hellmodus",
-    "pageSettingsLightModeToggleDescription" : "Hellmodus aktivieren",
+    "pageSettingsDarkModeToggleLabel" : "Dunkles Design",
+    "pageSettingsDarkModeToggleDescription" : "Dunkles Design aktivieren",
+    "pageSettingsLightModeToggleLabel" : "Helles Design",
+    "pageSettingsLightModeToggleDescription" : "Helles Design aktivieren",
     "pageSettingsSystemModeToggleLabel" : "System",
-    "pageSettingsSystemModeToggleDescription" : "System Standard",
-    "pageSettingsThemeLabel" : "Thema",
-    "pageSettingsThemeDescription" : "Entschieden zwischen dunkel, hell, oder system standard Themen"
+    "pageSettingsSystemModeToggleDescription" : "System Design",
+    "pageSettingsThemeLabel" : "Design",
+    "pageSettingsThemeDescription" : "Entschieden zwischen dunkeles, helles, oder system standard Design"
 }
