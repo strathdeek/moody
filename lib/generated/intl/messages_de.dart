@@ -19,6 +19,8 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'de';
 
+  static String m0(score) => "Ergebnis: ${score}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "PageSettingsTitle":
@@ -28,11 +30,24 @@ class MessageLookup extends MessageLookupByLibrary {
             "Haben Sie heute schon Ihre Stimmung aufgenommen?"),
         "notificationTitle":
             MessageLookupByLibrary.simpleMessage("Wie geht\'s?"),
+        "pageDashboardEntryAverageCardDescription":
+            MessageLookupByLibrary.simpleMessage("7 Tage Durchschnitt"),
+        "pageDashboardEntryAverageCardTitle":
+            MessageLookupByLibrary.simpleMessage("Trend"),
+        "pageDashboardEntryCardScore": m0,
+        "pageDashboardEntryCardShowMore":
+            MessageLookupByLibrary.simpleMessage("mehr anzeigen"),
+        "pageDashboardEntryCardTitle":
+            MessageLookupByLibrary.simpleMessage("letzte Einträge"),
+        "pageDashboardEntryNoEntriesText": MessageLookupByLibrary.simpleMessage(
+            "Keine Einträge gefunden.\n\'Stimmung aufnehmen\' tippen, um Ihren ersten Eintrag aufzunehmen!"),
         "pageDashboardGreeting":
             MessageLookupByLibrary.simpleMessage("Willkommen bei Moody"),
         "pageDashboardGuest":
             MessageLookupByLibrary.simpleMessage("Gastnutzer."),
         "pageDashboardHello": MessageLookupByLibrary.simpleMessage("Hallo, "),
+        "pageDashboardNewEntryButton":
+            MessageLookupByLibrary.simpleMessage("Ihre Stimmung aufzeichnen"),
         "pageDashboardTitle": MessageLookupByLibrary.simpleMessage("Zuhause"),
         "pageProfileCreateButton":
             MessageLookupByLibrary.simpleMessage("Profil erstellen"),
