@@ -35,5 +35,13 @@
     "pageSettingsRemindersAlertTitle" : "Reminders Permission Declined",
     "pageSettingsRemindersAlertDescription" : "Please manually enable notifications for this app in your settings app.",
     "pageSettingsRemindersAlertAccept" : "Settings",
-    "pageSettingsRemindersAlertDecline" : "Cancel"
+    "pageSettingsRemindersAlertDecline" : "Cancel",
+    "pageSettingsDarkModeToggleLabel" : "Dark Mode",
+    "pageSettingsDarkModeToggleDescription" : "Enable dark mode",
+    "pageSettingsLightModeToggleLabel" : "Light Mode",
+    "pageSettingsLightModeToggleDescription" : "Enable light mode",
+    "pageSettingsSystemModeToggleLabel" : "Default",
+    "pageSettingsSystemModeToggleDescription" : "Use default system theme",
+    "pageSettingsThemeLabel" : "Theme",
+    "pageSettingsThemeDescription" : "Choose between dark, light, and system default themes"
 }

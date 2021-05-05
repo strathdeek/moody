@@ -419,6 +419,86 @@ class S {
       args: [],
     );
   }
+
+  /// `Dark Mode`
+  String get pageSettingsDarkModeToggleLabel {
+    return Intl.message(
+      'Dark Mode',
+      name: 'pageSettingsDarkModeToggleLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enable dark mode`
+  String get pageSettingsDarkModeToggleDescription {
+    return Intl.message(
+      'Enable dark mode',
+      name: 'pageSettingsDarkModeToggleDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Light Mode`
+  String get pageSettingsLightModeToggleLabel {
+    return Intl.message(
+      'Light Mode',
+      name: 'pageSettingsLightModeToggleLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enable light mode`
+  String get pageSettingsLightModeToggleDescription {
+    return Intl.message(
+      'Enable light mode',
+      name: 'pageSettingsLightModeToggleDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Default`
+  String get pageSettingsSystemModeToggleLabel {
+    return Intl.message(
+      'Default',
+      name: 'pageSettingsSystemModeToggleLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Use default system theme`
+  String get pageSettingsSystemModeToggleDescription {
+    return Intl.message(
+      'Use default system theme',
+      name: 'pageSettingsSystemModeToggleDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Theme`
+  String get pageSettingsThemeLabel {
+    return Intl.message(
+      'Theme',
+      name: 'pageSettingsThemeLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose between dark, light, and system default themes`
+  String get pageSettingsThemeDescription {
+    return Intl.message(
+      'Choose between dark, light, and system default themes',
+      name: 'pageSettingsThemeDescription',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

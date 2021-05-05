@@ -35,5 +35,13 @@
     "pageSettingsRemindersAlertTitle" : "Benachrichtigungsberechtigung",
     "pageSettingsRemindersAlertDescription" : "Bitte aktivieren Sie Benachrichtigungen für diese App manuell in Ihrer Einstellungs-App.",
     "pageSettingsRemindersAlertAccept" : "Einstellungen",
-    "pageSettingsRemindersAlertDecline" : "Ablehnen"
+    "pageSettingsRemindersAlertDecline" : "Ablehnen",
+    "pageSettingsDarkModeToggleLabel" : "Dunkles Design",
+    "pageSettingsDarkModeToggleDescription" : "Dunkles Design aktivieren",
+    "pageSettingsLightModeToggleLabel" : "Helles Design",
+    "pageSettingsLightModeToggleDescription" : "Helles Design aktivieren",
+    "pageSettingsSystemModeToggleLabel" : "System",
+    "pageSettingsSystemModeToggleDescription" : "System Design",
+    "pageSettingsThemeLabel" : "Design",
+    "pageSettingsThemeDescription" : "Entschieden zwischen dunkeles, helles, oder system standard Design"
 }

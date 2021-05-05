@@ -57,6 +57,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "pageProfileSaveButton":
             MessageLookupByLibrary.simpleMessage("Profil speichern"),
         "pageProfileTitle": MessageLookupByLibrary.simpleMessage("Profil"),
+        "pageSettingsDarkModeToggleDescription":
+            MessageLookupByLibrary.simpleMessage("Dunkles Design aktivieren"),
+        "pageSettingsDarkModeToggleLabel":
+            MessageLookupByLibrary.simpleMessage("Dunkles Design"),
+        "pageSettingsLightModeToggleDescription":
+            MessageLookupByLibrary.simpleMessage("Helles Design aktivieren"),
+        "pageSettingsLightModeToggleLabel":
+            MessageLookupByLibrary.simpleMessage("Helles Design"),
         "pageSettingsRemindersAlertAccept":
             MessageLookupByLibrary.simpleMessage("Einstellungen"),
         "pageSettingsRemindersAlertDecline":
@@ -80,6 +88,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "pageStatisticsStreak": MessageLookupByLibrary.simpleMessage("Serie"),
         "pageStatisticsStreakRecord":
             MessageLookupByLibrary.simpleMessage("Dein Rekord: "),
+        "pageSettingsSystemModeToggleDescription":
+            MessageLookupByLibrary.simpleMessage("System Design"),
+        "pageSettingsSystemModeToggleLabel":
+            MessageLookupByLibrary.simpleMessage("System"),
+        "pageSettingsThemeDescription": MessageLookupByLibrary.simpleMessage(
+            "Entschieden zwischen dunkeles, helles, oder system standard Design"),
+        "pageSettingsThemeLabel":
+            MessageLookupByLibrary.simpleMessage("Design"),
         "pageStatisticsTitle":
             MessageLookupByLibrary.simpleMessage("Statistiken"),
         "pageStatisticsType":
