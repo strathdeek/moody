@@ -1,6 +1,8 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:moody/data/constants/navigation.dart';
 import 'package:moody/data/models/user.dart';
+import 'package:moody/views/screens/camera_page.dart';
 import 'package:moody/views/screens/dashboard_page.dart';
 import 'package:moody/views/screens/new_entry_page.dart';
 import 'package:moody/views/screens/profile_page.dart';
@@ -20,6 +22,11 @@ Route generateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => SettingsPage());
     case NewEntryPageRoute:
       return MaterialPageRoute(builder: (context) => NewEntryPage());
+    case CameraPageRoute:
+      return MaterialPageRoute(
+          builder: (context) => CameraPage(
+                camera: settings.arguments as CameraDescription,
+              ));
     default:
       return _buildPageWithNoTransition(() => DashboardPage(), settings);
   }
