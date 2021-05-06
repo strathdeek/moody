@@ -1,3 +1,4 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:moody/bloc/user/user_bloc.dart';
@@ -7,6 +8,15 @@ import 'package:moody/generated/l10n.dart';
 import 'package:moody/views/widgets/navigation_tray.dart';
 
 class DashboardPage extends StatelessWidget {
+  Future<void> _navigateToCamera(BuildContext context) async {
+    final cameras = await availableCameras();
+
+    final frontCamera = cameras.firstWhere(
+        (element) => element.lensDirection == CameraLensDirection.front);
+    await Navigator.of(context)
+        .pushNamed(CameraPageRoute, arguments: frontCamera);
+  }
+
   @override
   Widget build(BuildContext context) {
     initializeNotifications(context);
@@ -35,6 +45,11 @@ class DashboardPage extends StatelessWidget {
                 },
               ),
               Text(S.of(context).pageDashboardGreeting),
+              Center(
+                child: ElevatedButton(
+                    onPressed: () => _navigateToCamera(context),
+                    child: Text('child')),
+              )
             ],
           ),
         ),
