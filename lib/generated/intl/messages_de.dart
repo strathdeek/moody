@@ -79,6 +79,14 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Erinnerungen aktivieren/deaktivieren"),
         "pageSettingsRemindersToggleLabel":
             MessageLookupByLibrary.simpleMessage("Erinnerungen"),
+        "pageSettingsSystemModeToggleDescription":
+            MessageLookupByLibrary.simpleMessage("System Design"),
+        "pageSettingsSystemModeToggleLabel":
+            MessageLookupByLibrary.simpleMessage("System"),
+        "pageSettingsThemeDescription": MessageLookupByLibrary.simpleMessage(
+            "Entschieden zwischen dunkeles, helles, oder system standard Design"),
+        "pageSettingsThemeLabel":
+            MessageLookupByLibrary.simpleMessage("Design"),
         "pageStatisticsLoadingError": MessageLookupByLibrary.simpleMessage(
             "Daten konnten nicht geladen werden"),
         "pageStatisticsMonthly":
@@ -88,14 +96,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "pageStatisticsStreak": MessageLookupByLibrary.simpleMessage("Serie"),
         "pageStatisticsStreakRecord":
             MessageLookupByLibrary.simpleMessage("Dein Rekord: "),
-        "pageSettingsSystemModeToggleDescription":
-            MessageLookupByLibrary.simpleMessage("System Design"),
-        "pageSettingsSystemModeToggleLabel":
-            MessageLookupByLibrary.simpleMessage("System"),
-        "pageSettingsThemeDescription": MessageLookupByLibrary.simpleMessage(
-            "Entschieden zwischen dunkeles, helles, oder system standard Design"),
-        "pageSettingsThemeLabel":
-            MessageLookupByLibrary.simpleMessage("Design"),
         "pageStatisticsTitle":
             MessageLookupByLibrary.simpleMessage("Statistiken"),
         "pageStatisticsType":

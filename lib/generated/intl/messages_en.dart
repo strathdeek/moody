@@ -78,6 +78,13 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Enable or disable reminder notifications"),
         "pageSettingsRemindersToggleLabel":
             MessageLookupByLibrary.simpleMessage("Reminders"),
+        "pageSettingsSystemModeToggleDescription":
+            MessageLookupByLibrary.simpleMessage("Use default system theme"),
+        "pageSettingsSystemModeToggleLabel":
+            MessageLookupByLibrary.simpleMessage("Default"),
+        "pageSettingsThemeDescription": MessageLookupByLibrary.simpleMessage(
+            "Choose between dark, light, and system default themes"),
+        "pageSettingsThemeLabel": MessageLookupByLibrary.simpleMessage("Theme"),
         "pageStatisticsLoadingError":
             MessageLookupByLibrary.simpleMessage("Data could not be loaded"),
         "pageStatisticsMonthly":
@@ -87,13 +94,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "pageStatisticsStreak": MessageLookupByLibrary.simpleMessage("Streak"),
         "pageStatisticsStreakRecord":
             MessageLookupByLibrary.simpleMessage("Your Record: "),
-        "pageSettingsSystemModeToggleDescription":
-            MessageLookupByLibrary.simpleMessage("Use default system theme"),
-        "pageSettingsSystemModeToggleLabel":
-            MessageLookupByLibrary.simpleMessage("Default"),
-        "pageSettingsThemeDescription": MessageLookupByLibrary.simpleMessage(
-            "Choose between dark, light, and system default themes"),
-        "pageSettingsThemeLabel": MessageLookupByLibrary.simpleMessage("Theme"),
         "pageStatisticsTitle":
             MessageLookupByLibrary.simpleMessage("Statistics"),
         "pageStatisticsType": MessageLookupByLibrary.simpleMessage("By Type")

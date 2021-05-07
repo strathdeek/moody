@@ -6,7 +6,6 @@ import 'package:moody/data/constants/navigation.dart';
 import 'package:moody/data/extensions.dart';
 import 'package:moody/data/models/mood.dart';
 import 'package:moody/generated/l10n.dart';
-import 'package:moody/views/widgets/navigation_tray.dart';
 import 'package:moody/data/constants/enums/mood_type.dart';
 
 class EntryListPage extends StatefulWidget {
@@ -39,7 +38,7 @@ class _EntryListPageState extends State<EntryListPage> {
             floating: false,
             automaticallyImplyLeading: false,
             title: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 IconButton(
                   icon: Icon(
@@ -91,13 +90,13 @@ class _EntryListPageState extends State<EntryListPage> {
                   delegate: SliverChildListDelegate(tiles),
                 );
               } else {
-                return Text(S.of(context).pageEntryListNoData);
+                return SliverToBoxAdapter(
+                    child: Text(S.of(context).pageEntryListNoData));
               }
             },
           ),
         ],
       ),
-      bottomNavigationBar: NavigationTray(),
     );
   }
 
@@ -112,23 +111,15 @@ class _EntryListPageState extends State<EntryListPage> {
       child: Column(
         children: [
           Card(
-            color: mood.score.toMoodType().toColor().shade400,
-            shadowColor: mood.score.toMoodType().toColor().shade600,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15),
-            ),
-            margin: EdgeInsets.all(0),
-            child: TextFormField(
-              textAlign: TextAlign.center,
-              controller: TextEditingController(
-                  text: (DateFormat.yMMMMEEEEd(S.of(context).localeKey)
-                      .format(mood.date))),
-              decoration: InputDecoration(
-                border: InputBorder.none,
+              elevation: 0,
+              color: mood.score.toMoodType().toColor().shade400,
+              shadowColor: mood.score.toMoodType().toColor().shade600,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15),
               ),
-              enabled: false,
-            ),
-          ),
+              margin: EdgeInsets.all(0),
+              child: Text(DateFormat.yMMMMEEEEd(S.of(context).localeKey)
+                  .format(mood.date))),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(

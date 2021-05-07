@@ -77,38 +77,43 @@ class _StatsMoodMonthlyState extends State<StatsMoodMonthly> {
                             ),
                           ),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      IconButton(
-                        icon: Icon(
-                          Icons.arrow_back,
-                          color: Theme.of(context).textTheme.headline5?.color,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        IconButton(
+                          icon: Icon(
+                            Icons.arrow_back,
+                            color: Theme.of(context).textTheme.headline5?.color,
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              _date = DateTime(_date.year, _date.month - 1);
+                            });
+                          },
                         ),
-                        onPressed: () {
-                          setState(() {
-                            _date = DateTime(_date.year, _date.month - 1);
-                          });
-                        },
-                      ),
-                      Text(
-                        DateFormat.yMMMM(S.of(context).localeKey).format(_date),
-                        style: Theme.of(context).textTheme.headline5,
-                        textAlign: TextAlign.center,
-                      ),
-                      IconButton(
-                        icon: Icon(
-                          Icons.arrow_forward,
-                          color: Theme.of(context).textTheme.headline5?.color ??
-                              Colors.black,
+                        Text(
+                          DateFormat.yMMMM(S.of(context).localeKey)
+                              .format(_date),
+                          style: Theme.of(context).textTheme.headline5,
+                          textAlign: TextAlign.center,
                         ),
-                        onPressed: () {
-                          setState(() {
-                            _date = DateTime(_date.year, _date.month + 1);
-                          });
-                        },
-                      ),
-                    ],
+                        IconButton(
+                          icon: Icon(
+                            Icons.arrow_forward,
+                            color:
+                                Theme.of(context).textTheme.headline5?.color ??
+                                    Colors.black,
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              _date = DateTime(_date.year, _date.month + 1);
+                            });
+                          },
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               );

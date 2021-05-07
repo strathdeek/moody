@@ -4,6 +4,9 @@ import 'constants/enums/mood_type.dart';
 
 extension DoubleExtension on double {
   double roundToDigits(int digits) {
+    if (isInfinite || isNaN || digits.isInfinite || digits.isNaN) {
+      return double.nan;
+    }
     return (this * math.pow(10, digits)).round() / math.pow(10, digits);
   }
 
