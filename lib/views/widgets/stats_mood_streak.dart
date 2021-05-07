@@ -68,7 +68,7 @@ class StatsMoodStreak extends StatelessWidget {
       }
     }
 
-    _longestStreak = longestStreak;
-    _newestStreak = newestStreak;
+    _longestStreak = longestStreak == 0 ? currentStreak : longestStreak;
+    _newestStreak = newestStreak ?? _longestStreak;
   }
 }

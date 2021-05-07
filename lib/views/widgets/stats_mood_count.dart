@@ -27,9 +27,15 @@ class StatsMoodCount extends StatelessWidget {
                         child: PieChart(
                           PieChartData(
                             sections: List.generate(
-                              MoodType.values.length,
+                              state.moodEntries
+                                  .map((e) => e.score.toMoodType())
+                                  .toSet()
+                                  .length,
                               (index) {
-                                var mood = MoodType.values[index];
+                                var mood = state.moodEntries
+                                    .map((e) => e.score.toMoodType())
+                                    .toSet()
+                                    .toList()[index];
                                 var count = state.moodEntries
                                     .where((element) =>
                                         element.score.toMoodType() == mood)
