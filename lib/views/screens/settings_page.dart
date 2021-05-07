@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:moody/bloc/mood/mood_bloc.dart';
 import 'package:moody/bloc/reminder/reminder_cubit.dart';
 import 'package:moody/bloc/theme/theme_cubit.dart';
 import 'package:moody/generated/l10n.dart';
@@ -35,10 +36,12 @@ class SettingsPage extends StatelessWidget {
               delegate: SliverChildListDelegate(
                 [
                   ListTile(
-                    title: Text('Delete User Data'),
-                    subtitle:
-                        Text('Permanently deletes all saved mood entries.'),
-                    onTap: () {},
+                    title: Text(S.of(context).pageSettingsDeleteUserDataLabel),
+                    subtitle: Text(
+                        S.of(context).pageSettingsDeleteUserDataDescription),
+                    onTap: () {
+                      context.read<MoodBloc>().add(MoodAllDeleted());
+                    },
                   ),
                   Divider(),
                   ListTile(

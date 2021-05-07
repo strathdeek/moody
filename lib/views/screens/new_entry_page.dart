@@ -35,6 +35,8 @@ class _NewEntryPageState extends State<NewEntryPage> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               EmoteBanner(
+                height: 400,
+                showBanner: true,
                 moodType: _moodValue.toMoodType(),
               ),
               Padding(

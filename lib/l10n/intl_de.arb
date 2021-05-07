@@ -6,6 +6,18 @@
     "pageDashboardGuest":"Gastnutzer.",
     "pageDashboardTitle": "Zuhause",
     "pageDashboardAddMoodButton": "Füge deine heutige Stimmung hinzu!",
+    "pageDashboardEntryCardTitle": "letzte Einträge",
+    "pageDashboardEntryCardScore": "Ergebnis: {score}",
+    "@pageDashboardEntryCardScore": {
+        "placeholders": {
+            "score": {}
+        }
+    },
+    "pageDashboardEntryNoEntriesText" : "Keine Einträge gefunden.\n'Stimmung aufnehmen' tippen, um Ihren ersten Eintrag aufzunehmen!",
+    "pageDashboardEntryAverageCardTitle" : "Trend",
+    "pageDashboardEntryAverageCardDescription" : "7 Tage Durchschnitt",
+    "pageDashboardEntryCardShowMore" : "mehr anzeigen",
+    "pageDashboardNewEntryButton" : "Ihre Stimmung aufzeichnen",
     "PageSettingsTitle": "Einstellungen",
     "pageStatisticsTitle": "Statistiken",
     "pageStatisticsType":"Nach Stimmung",

@@ -6,6 +6,18 @@
     "pageDashboardGuest":"Guest User.",
     "pageDashboardTitle": "Home",
     "pageDashboardAddMoodButton": "Add today's mood now!",
+    "pageDashboardEntryCardTitle": "Latest Entry",
+    "pageDashboardEntryCardScore": "Score: {score}",
+    "@pageDashboardEntryCardScore": {
+        "placeholders": {
+            "score": {}
+        }
+    },
+    "pageDashboardEntryNoEntriesText" : "No entries found.\nRecord your first entry by tapping the 'Record your mood' button below!",
+    "pageDashboardEntryAverageCardTitle" : "Trend",
+    "pageDashboardEntryAverageCardDescription" : "Average over the last 7 days",
+    "pageDashboardEntryCardShowMore" : "show more",
+    "pageDashboardNewEntryButton" : "Record Your Mood",
     "PageSettingsTitle": "Settings",
     "pageStatisticsTitle": "Statistics",
     "pageStatisticsType":"By Type",
@@ -43,5 +55,7 @@
     "pageSettingsSystemModeToggleLabel" : "Default",
     "pageSettingsSystemModeToggleDescription" : "Use default system theme",
     "pageSettingsThemeLabel" : "Theme",
-    "pageSettingsThemeDescription" : "Choose between dark, light, and system default themes"
+    "pageSettingsThemeDescription" : "Choose between dark, light, and system default themes",
+    "pageSettingsDeleteUserDataLabel" : "Delete User Data",
+    "pageSettingsDeleteUserDataDescription" : "Permanently deletes all saved mood entries."
 }

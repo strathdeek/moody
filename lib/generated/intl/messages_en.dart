@@ -19,6 +19,8 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
+  static String m0(score) => "Score: ${score}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "PageSettingsTitle": MessageLookupByLibrary.simpleMessage("Settings"),
@@ -35,11 +37,25 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("How are you?"),
         "pageDashboardAddMoodButton":
             MessageLookupByLibrary.simpleMessage("Add today\'s mood now!"),
+        "pageDashboardEntryAverageCardDescription":
+            MessageLookupByLibrary.simpleMessage(
+                "Average over the last 7 days"),
+        "pageDashboardEntryAverageCardTitle":
+            MessageLookupByLibrary.simpleMessage("Trend"),
+        "pageDashboardEntryCardScore": m0,
+        "pageDashboardEntryCardShowMore":
+            MessageLookupByLibrary.simpleMessage("show more"),
+        "pageDashboardEntryCardTitle":
+            MessageLookupByLibrary.simpleMessage("Latest Entry"),
+        "pageDashboardEntryNoEntriesText": MessageLookupByLibrary.simpleMessage(
+            "No entries found.\nRecord your first entry by tapping the \'Record your mood\' button below!"),
         "pageDashboardGreeting":
             MessageLookupByLibrary.simpleMessage("Welcome to Moody"),
         "pageDashboardGuest":
             MessageLookupByLibrary.simpleMessage("Guest User."),
         "pageDashboardHello": MessageLookupByLibrary.simpleMessage("Hello, "),
+        "pageDashboardNewEntryButton":
+            MessageLookupByLibrary.simpleMessage("Record Your Mood"),
         "pageDashboardTitle": MessageLookupByLibrary.simpleMessage("Home"),
         "pageEntryListNoData":
             MessageLookupByLibrary.simpleMessage("No entries available."),
@@ -60,6 +76,11 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Enable dark mode"),
         "pageSettingsDarkModeToggleLabel":
             MessageLookupByLibrary.simpleMessage("Dark Mode"),
+        "pageSettingsDeleteUserDataDescription":
+            MessageLookupByLibrary.simpleMessage(
+                "Permanently deletes all saved mood entries."),
+        "pageSettingsDeleteUserDataLabel":
+            MessageLookupByLibrary.simpleMessage("Delete User Data"),
         "pageSettingsLightModeToggleDescription":
             MessageLookupByLibrary.simpleMessage("Enable light mode"),
         "pageSettingsLightModeToggleLabel":

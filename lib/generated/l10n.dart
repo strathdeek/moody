@@ -120,6 +120,76 @@ class S {
     );
   }
 
+  /// `Latest Entry`
+  String get pageDashboardEntryCardTitle {
+    return Intl.message(
+      'Latest Entry',
+      name: 'pageDashboardEntryCardTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Score: {score}`
+  String pageDashboardEntryCardScore(Object score) {
+    return Intl.message(
+      'Score: $score',
+      name: 'pageDashboardEntryCardScore',
+      desc: '',
+      args: [score],
+    );
+  }
+
+  /// `No entries found.\nRecord your first entry by tapping the 'Record your mood' button below!`
+  String get pageDashboardEntryNoEntriesText {
+    return Intl.message(
+      'No entries found.\nRecord your first entry by tapping the \'Record your mood\' button below!',
+      name: 'pageDashboardEntryNoEntriesText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Trend`
+  String get pageDashboardEntryAverageCardTitle {
+    return Intl.message(
+      'Trend',
+      name: 'pageDashboardEntryAverageCardTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Average over the last 7 days`
+  String get pageDashboardEntryAverageCardDescription {
+    return Intl.message(
+      'Average over the last 7 days',
+      name: 'pageDashboardEntryAverageCardDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `show more`
+  String get pageDashboardEntryCardShowMore {
+    return Intl.message(
+      'show more',
+      name: 'pageDashboardEntryCardShowMore',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Record Your Mood`
+  String get pageDashboardNewEntryButton {
+    return Intl.message(
+      'Record Your Mood',
+      name: 'pageDashboardNewEntryButton',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Settings`
   String get PageSettingsTitle {
     return Intl.message(
@@ -495,6 +565,26 @@ class S {
     return Intl.message(
       'Choose between dark, light, and system default themes',
       name: 'pageSettingsThemeDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete User Data`
+  String get pageSettingsDeleteUserDataLabel {
+    return Intl.message(
+      'Delete User Data',
+      name: 'pageSettingsDeleteUserDataLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Permanently deletes all saved mood entries.`
+  String get pageSettingsDeleteUserDataDescription {
+    return Intl.message(
+      'Permanently deletes all saved mood entries.',
+      name: 'pageSettingsDeleteUserDataDescription',
       desc: '',
       args: [],
     );
