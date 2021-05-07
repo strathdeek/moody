@@ -19,6 +19,7 @@ class EmoteBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
+      alignment: Alignment.topCenter,
       children: [
         showBanner
             ? CustomPaint(
@@ -27,7 +28,7 @@ class EmoteBanner extends StatelessWidget {
               )
             : Container(),
         CustomPaint(
-          size: Size.fromHeight(height),
+          size: Size(height, height),
           painter: EmotePainter(emotion: moodType),
         )
       ],
