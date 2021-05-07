@@ -17,10 +17,10 @@ class MoodAdapter extends TypeAdapter<Mood> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return Mood(
-      id: fields[0] as dynamic,
-      score: fields[1] as double,
-      date: fields[2] as dynamic,
-    );
+        id: fields[0] as dynamic,
+        score: fields[1] as double,
+        date: fields[2] as dynamic,
+        imagePath: fields[3] as dynamic);
   }
 
   @override
@@ -32,7 +32,9 @@ class MoodAdapter extends TypeAdapter<Mood> {
       ..writeByte(1)
       ..write(obj.score)
       ..writeByte(2)
-      ..write(obj.date);
+      ..write(obj.date)
+      ..writeByte(3)
+      ..write(obj.imagePath);
   }
 
   @override

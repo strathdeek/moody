@@ -49,5 +49,8 @@
 	    <!-- Permission options for the `reminder` group -->
     <key>NSRemindersUsageDescription</key>
     <string>reminders</string>
+	<key>NSCameraUsageDescription</key>
+<string>Camera access is required in order to utilize the mood photo feature.</string>
+
 </dict>
 </plist>
