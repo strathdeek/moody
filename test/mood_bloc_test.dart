@@ -121,6 +121,27 @@ void main() {
         MoodLoadSuccess([mood1]),
       ],
     );
+    blocTest<MoodBloc, MoodState>(
+      'delete all mood entries',
+      build: () {
+        return moodBloc;
+      },
+      act: (MoodBloc bloc) async {
+        bloc.add(AppStart());
+        bloc.add(MoodAdded(mood1));
+        bloc.add(MoodAdded(mood2));
+        bloc.add(MoodAdded(mood3));
+        bloc.add(MoodAllDeleted());
+      },
+      expect: () => <MoodState>[
+        MoodLoadInProgress(),
+        MoodLoadSuccess([]),
+        MoodLoadSuccess([mood1]),
+        MoodLoadSuccess([mood1, mood2]),
+        MoodLoadSuccess([mood1, mood2, mood3]),
+        MoodLoadSuccess([]),
+      ],
+    );
 
     blocTest<MoodBloc, MoodState>(
       'delete mood entry',
