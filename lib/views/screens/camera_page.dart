@@ -2,7 +2,7 @@ import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 
 class CameraPage extends StatefulWidget {
-  CameraDescription camera;
+  final CameraDescription camera;
   CameraPage({
     Key? key,
     required this.camera,
@@ -40,30 +40,33 @@ class _CameraPageState extends State<CameraPage> {
 
   @override
   Widget build(BuildContext context) {
-    final scale = 1 /
-        (_controller.value.aspectRatio *
-            MediaQuery.of(context).size.aspectRatio);
-
     return Container(
       child: Scaffold(
         appBar: AppBar(),
-        body: FutureBuilder<void>(
-          future: _initializeControllerFuture,
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.done) {
-              // If the Future is complete, display the preview.
-              return Transform.scale(
-                  scale: scale,
-                  alignment: Alignment.topCenter,
-                  child: CameraPreview(_controller));
-            } else {
-              // Otherwise, display a loading indicator.
-              return Center(child: CircularProgressIndicator());
-            }
-          },
-        ),
+        body: Stack(children: [
+          FutureBuilder<void>(
+            future: _initializeControllerFuture,
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.done) {
+                // If the Future is complete, display the preview.
+                return Transform.scale(
+                    scale: 1 /
+                        (_controller.value.aspectRatio *
+                            MediaQuery.of(context).size.aspectRatio),
+                    origin: Offset(0, -50),
+                    child: CameraPreview(_controller));
+              } else {
+                // Otherwise, display a loading indicator.
+                return Center(child: CircularProgressIndicator());
+              }
+            },
+          ),
+        ]),
         floatingActionButton: FloatingActionButton(
-          onPressed: () => print('hello'),
+          onPressed: () async {
+            var imageFile = await _controller.takePicture();
+            Navigator.of(context).pop(imageFile);
+          },
           child: Icon(Icons.camera),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,

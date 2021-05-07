@@ -47,7 +47,8 @@ class DashboardPage extends StatelessWidget {
               Text(S.of(context).pageDashboardGreeting),
               Center(
                 child: ElevatedButton(
-                    onPressed: () => _navigateToCamera(context),
+                    onPressed: () =>
+                        Navigator.of(context).pushNamed(NewEntryPageRoute),
                     child: Text('child')),
               )
             ],
