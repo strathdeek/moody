@@ -14,13 +14,13 @@ class Mood extends Equatable {
   final double score;
   @HiveField(2)
   final DateTime date;
+  @HiveField(3)
+  final String? imagePath;
 
-  Mood({
-    id,
-    required this.score,
-    date,
-  })  : id = id ?? Uuid().v4(),
-        date = date ?? DateTime.now();
+  Mood({id, required this.score, date, imagePath})
+      : id = id ?? Uuid().v4(),
+        date = date ?? DateTime.now(),
+        imagePath = imagePath;
 
   Mood copyWith({
     String? id,
@@ -39,15 +39,16 @@ class Mood extends Equatable {
       'id': id,
       'score': score,
       'date': date.millisecondsSinceEpoch,
+      'imagePath': imagePath
     };
   }
 
   factory Mood.fromMap(Map<String, dynamic> map) {
     return Mood(
-      id: map['id'],
-      score: map['score'],
-      date: DateTime.fromMillisecondsSinceEpoch(map['date']),
-    );
+        id: map['id'],
+        score: map['score'],
+        date: DateTime.fromMillisecondsSinceEpoch(map['date']),
+        imagePath: map['imagePath']);
   }
 
   String toJson() => json.encode(toMap());
@@ -58,5 +59,5 @@ class Mood extends Equatable {
   bool get stringify => true;
 
   @override
-  List<Object> get props => [id, score, date];
+  List<Object> get props => [id, score, date, imagePath!];
 }

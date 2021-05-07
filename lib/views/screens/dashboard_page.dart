@@ -11,15 +11,6 @@ import 'package:moody/views/widgets/navigation_tray.dart';
 import 'package:moody/data/constants/enums/mood_type.dart';
 
 class DashboardPage extends StatelessWidget {
-  // Future<void> _navigateToCamera(BuildContext context) async {
-  //   final cameras = await availableCameras();
-
-  //   final frontCamera = cameras.firstWhere(
-  //       (element) => element.lensDirection == CameraLensDirection.front);
-  //   await Navigator.of(context)
-  //       .pushNamed(CameraPageRoute, arguments: frontCamera);
-  // }
-
   @override
   Widget build(BuildContext context) {
     initializeNotifications(context);

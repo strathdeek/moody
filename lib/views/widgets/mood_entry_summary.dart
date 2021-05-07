@@ -4,6 +4,7 @@ import 'package:moody/data/models/mood.dart';
 import 'package:moody/generated/l10n.dart';
 import 'package:moody/views/widgets/emote_banner.dart';
 import 'package:moody/data/constants/enums/mood_type.dart';
+import 'package:moody/views/widgets/mood_image.dart';
 
 class MoodEntrySummary extends StatelessWidget {
   final Mood mood;
@@ -41,13 +42,17 @@ class MoodEntrySummary extends StatelessWidget {
                 color: mood.score.toMoodType().toColor(),
                 child: Container(
                   padding: EdgeInsets.all(8),
-                  height: 100,
-                  width: 100,
+                  height: 70,
+                  width: 70,
                   child: EmoteBanner(
                       height: 100,
                       showBanner: false,
                       moodType: mood.score.toMoodType()),
                 ),
+              ),
+              MoodImage(
+                imagePath: mood.imagePath,
+                height: 100,
               ),
               Text(
                   S.of(context).pageDashboardEntryCardScore(mood.score.round()),
