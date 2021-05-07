@@ -112,14 +112,23 @@ class _EntryListPageState extends State<EntryListPage> {
         children: [
           Card(
               elevation: 0,
+              clipBehavior: Clip.antiAlias,
               color: mood.score.toMoodType().toColor().shade400,
               shadowColor: mood.score.toMoodType().toColor().shade600,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15),
               ),
               margin: EdgeInsets.all(0),
-              child: Text(DateFormat.yMMMMEEEEd(S.of(context).localeKey)
-                  .format(mood.date))),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    padding: EdgeInsets.symmetric(vertical: 6),
+                    child: Text(DateFormat.yMMMMEEEEd(S.of(context).localeKey)
+                        .format(mood.date)),
+                  ),
+                ],
+              )),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
