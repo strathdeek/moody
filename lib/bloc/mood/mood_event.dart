@@ -34,6 +34,8 @@ class MoodUpdated extends MoodEvent {
   List<Object> get props => [mood];
 }
 
+class MoodAllDeleted extends MoodEvent {}
+
 class AppStart extends MoodEvent {}
 
 class ExportEntries extends MoodEvent {}

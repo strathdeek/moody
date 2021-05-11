@@ -59,6 +59,17 @@ class MoodBloc extends Bloc<MoodEvent, MoodState> {
           yield MoodLoadFail(e.error);
         }
       }
+
+      if (event is MoodAllDeleted) {
+        try {
+          moodEntries.forEach((element) {
+            _moodRepository.delete(element);
+          });
+          yield MoodLoadSuccess([]);
+        } on RepositoryException catch (e) {
+          yield MoodLoadFail(e.error);
+        }
+      }
     }
     if (event is ExportEntries) {
       _moodRepository.export();

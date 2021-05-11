@@ -1,11 +1,32 @@
 {
     "appTitle" : "MOODY",
+    "localeKey":"en_US",
     "pageDashboardGreeting":"Welcome to Moody",
     "pageDashboardHello":"Hello, ",
     "pageDashboardGuest":"Guest User.",
     "pageDashboardTitle": "Home",
+    "pageDashboardAddMoodButton": "Add today's mood now!",
+    "pageDashboardEntryCardTitle": "Latest Entry",
+    "pageDashboardEntryCardScore": "Score: {score}",
+    "@pageDashboardEntryCardScore": {
+        "placeholders": {
+            "score": {}
+        }
+    },
+    "pageDashboardEntryNoEntriesText" : "No entries found.\nRecord your first entry by tapping the 'Record your mood' button below!",
+    "pageDashboardEntryAverageCardTitle" : "Trend",
+    "pageDashboardEntryAverageCardDescription" : "Average over the last 7 days",
+    "pageDashboardEntryCardShowMore" : "show more",
+    "pageDashboardNewEntryButton" : "Record Your Mood",
     "PageSettingsTitle": "Settings",
     "pageStatisticsTitle": "Statistics",
+    "pageStatisticsType":"By Type",
+    "pageStatisticsMonthly":"Monthly",
+    "pageStatisticsMonthlyNoData":"No Data for this month available.",
+    "pageStatisticsStreakRecord":"Your Record: ",
+    "pageStatisticsStreak":"Streak",
+    "pageStatisticsLoadingError": "Data could not be loaded",
+    "pageEntryListNoData" : "No entries available.",
     "pageProfileTitle": "Profile",
     "pageProfileHeaderGuest": "Guest User",
     "pageProfileHeader": "My Profile",
@@ -14,6 +35,11 @@
     "pageProfileDateOfBirthLabel": "Date of Birth",
     "pageProfileCreateButton": "Create profile",
     "pageProfileSaveButton": "Save profile",
+    "moodTypeTerrible":"Terrible",
+    "moodTypeBad":"Bad",
+    "moodTypeMeh":"Meh",
+    "moodTypeGood":"Good",
+    "moodTypeAwesome":"Awesome",
     "notificationTitle": "How are you?",
     "notificationDescription": "Have you recorded your mood yet today?",
     "pageSettingsRemindersToggleLabel" : "Reminders",
@@ -29,5 +55,7 @@
     "pageSettingsSystemModeToggleLabel" : "Default",
     "pageSettingsSystemModeToggleDescription" : "Use default system theme",
     "pageSettingsThemeLabel" : "Theme",
-    "pageSettingsThemeDescription" : "Choose between dark, light, and system default themes"
+    "pageSettingsThemeDescription" : "Choose between dark, light, and system default themes",
+    "pageSettingsDeleteUserDataLabel" : "Delete User Data",
+    "pageSettingsDeleteUserDataDescription" : "Permanently deletes all saved mood entries."
 }

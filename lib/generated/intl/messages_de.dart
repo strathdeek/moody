@@ -19,21 +19,46 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'de';
 
+  static String m0(score) => "Ergebnis: ${score}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "PageSettingsTitle":
             MessageLookupByLibrary.simpleMessage("Einstellungen"),
         "appTitle": MessageLookupByLibrary.simpleMessage("MOODY"),
+        "localeKey": MessageLookupByLibrary.simpleMessage("de_DE"),
+        "moodTypeAwesome": MessageLookupByLibrary.simpleMessage("Hervorragend"),
+        "moodTypeBad": MessageLookupByLibrary.simpleMessage("Schlecht"),
+        "moodTypeGood": MessageLookupByLibrary.simpleMessage("Gut"),
+        "moodTypeMeh": MessageLookupByLibrary.simpleMessage("Meh"),
+        "moodTypeTerrible": MessageLookupByLibrary.simpleMessage("Schrecklich"),
         "notificationDescription": MessageLookupByLibrary.simpleMessage(
             "Haben Sie heute schon Ihre Stimmung aufgenommen?"),
         "notificationTitle":
             MessageLookupByLibrary.simpleMessage("Wie geht\'s?"),
+        "pageDashboardAddMoodButton": MessageLookupByLibrary.simpleMessage(
+            "Füge deine heutige Stimmung hinzu!"),
+        "pageDashboardEntryAverageCardDescription":
+            MessageLookupByLibrary.simpleMessage("7 Tage Durchschnitt"),
+        "pageDashboardEntryAverageCardTitle":
+            MessageLookupByLibrary.simpleMessage("Trend"),
+        "pageDashboardEntryCardScore": m0,
+        "pageDashboardEntryCardShowMore":
+            MessageLookupByLibrary.simpleMessage("mehr anzeigen"),
+        "pageDashboardEntryCardTitle":
+            MessageLookupByLibrary.simpleMessage("letzte Einträge"),
+        "pageDashboardEntryNoEntriesText": MessageLookupByLibrary.simpleMessage(
+            "Keine Einträge gefunden.\n\'Stimmung aufnehmen\' tippen, um Ihren ersten Eintrag aufzunehmen!"),
         "pageDashboardGreeting":
             MessageLookupByLibrary.simpleMessage("Willkommen bei Moody"),
         "pageDashboardGuest":
             MessageLookupByLibrary.simpleMessage("Gastnutzer."),
         "pageDashboardHello": MessageLookupByLibrary.simpleMessage("Hallo, "),
+        "pageDashboardNewEntryButton":
+            MessageLookupByLibrary.simpleMessage("Ihre Stimmung aufzeichnen"),
         "pageDashboardTitle": MessageLookupByLibrary.simpleMessage("Zuhause"),
+        "pageEntryListNoData":
+            MessageLookupByLibrary.simpleMessage("Keine Einträge verfügbar."),
         "pageProfileCreateButton":
             MessageLookupByLibrary.simpleMessage("Profil erstellen"),
         "pageProfileDateOfBirthLabel":
@@ -77,7 +102,18 @@ class MessageLookup extends MessageLookupByLibrary {
             "Entschieden zwischen dunkeles, helles, oder system standard Design"),
         "pageSettingsThemeLabel":
             MessageLookupByLibrary.simpleMessage("Design"),
+        "pageStatisticsLoadingError": MessageLookupByLibrary.simpleMessage(
+            "Daten konnten nicht geladen werden"),
+        "pageStatisticsMonthly":
+            MessageLookupByLibrary.simpleMessage("Monatlich"),
+        "pageStatisticsMonthlyNoData": MessageLookupByLibrary.simpleMessage(
+            "Keine Daten für diesen Monat verfügbar"),
+        "pageStatisticsStreak": MessageLookupByLibrary.simpleMessage("Serie"),
+        "pageStatisticsStreakRecord":
+            MessageLookupByLibrary.simpleMessage("Dein Rekord: "),
         "pageStatisticsTitle":
-            MessageLookupByLibrary.simpleMessage("Statistiken")
+            MessageLookupByLibrary.simpleMessage("Statistiken"),
+        "pageStatisticsType":
+            MessageLookupByLibrary.simpleMessage("Nach Stimmung")
       };
 }

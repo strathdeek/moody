@@ -36,10 +36,12 @@ class SettingsPage extends StatelessWidget {
               delegate: SliverChildListDelegate(
                 [
                   ListTile(
-                    title: Text('Delete User Data'),
-                    subtitle:
-                        Text('Permanently deletes all saved mood entries.'),
-                    onTap: () {},
+                    title: Text(S.of(context).pageSettingsDeleteUserDataLabel),
+                    subtitle: Text(
+                        S.of(context).pageSettingsDeleteUserDataDescription),
+                    onTap: () {
+                      context.read<MoodBloc>().add(MoodAllDeleted());
+                    },
                   ),
                   Divider(),
                   ListTile(

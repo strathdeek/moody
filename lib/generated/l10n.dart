@@ -60,6 +60,16 @@ class S {
     );
   }
 
+  /// `en_US`
+  String get localeKey {
+    return Intl.message(
+      'en_US',
+      name: 'localeKey',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Welcome to Moody`
   String get pageDashboardGreeting {
     return Intl.message(
@@ -100,6 +110,86 @@ class S {
     );
   }
 
+  /// `Add today's mood now!`
+  String get pageDashboardAddMoodButton {
+    return Intl.message(
+      'Add today\'s mood now!',
+      name: 'pageDashboardAddMoodButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Latest Entry`
+  String get pageDashboardEntryCardTitle {
+    return Intl.message(
+      'Latest Entry',
+      name: 'pageDashboardEntryCardTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Score: {score}`
+  String pageDashboardEntryCardScore(Object score) {
+    return Intl.message(
+      'Score: $score',
+      name: 'pageDashboardEntryCardScore',
+      desc: '',
+      args: [score],
+    );
+  }
+
+  /// `No entries found.\nRecord your first entry by tapping the 'Record your mood' button below!`
+  String get pageDashboardEntryNoEntriesText {
+    return Intl.message(
+      'No entries found.\nRecord your first entry by tapping the \'Record your mood\' button below!',
+      name: 'pageDashboardEntryNoEntriesText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Trend`
+  String get pageDashboardEntryAverageCardTitle {
+    return Intl.message(
+      'Trend',
+      name: 'pageDashboardEntryAverageCardTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Average over the last 7 days`
+  String get pageDashboardEntryAverageCardDescription {
+    return Intl.message(
+      'Average over the last 7 days',
+      name: 'pageDashboardEntryAverageCardDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `show more`
+  String get pageDashboardEntryCardShowMore {
+    return Intl.message(
+      'show more',
+      name: 'pageDashboardEntryCardShowMore',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Record Your Mood`
+  String get pageDashboardNewEntryButton {
+    return Intl.message(
+      'Record Your Mood',
+      name: 'pageDashboardNewEntryButton',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Settings`
   String get PageSettingsTitle {
     return Intl.message(
@@ -115,6 +205,76 @@ class S {
     return Intl.message(
       'Statistics',
       name: 'pageStatisticsTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `By Type`
+  String get pageStatisticsType {
+    return Intl.message(
+      'By Type',
+      name: 'pageStatisticsType',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Monthly`
+  String get pageStatisticsMonthly {
+    return Intl.message(
+      'Monthly',
+      name: 'pageStatisticsMonthly',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No Data for this month available.`
+  String get pageStatisticsMonthlyNoData {
+    return Intl.message(
+      'No Data for this month available.',
+      name: 'pageStatisticsMonthlyNoData',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Record: `
+  String get pageStatisticsStreakRecord {
+    return Intl.message(
+      'Your Record: ',
+      name: 'pageStatisticsStreakRecord',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Streak`
+  String get pageStatisticsStreak {
+    return Intl.message(
+      'Streak',
+      name: 'pageStatisticsStreak',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Data could not be loaded`
+  String get pageStatisticsLoadingError {
+    return Intl.message(
+      'Data could not be loaded',
+      name: 'pageStatisticsLoadingError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No entries available.`
+  String get pageEntryListNoData {
+    return Intl.message(
+      'No entries available.',
+      name: 'pageEntryListNoData',
       desc: '',
       args: [],
     );
@@ -195,6 +355,56 @@ class S {
     return Intl.message(
       'Save profile',
       name: 'pageProfileSaveButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Terrible`
+  String get moodTypeTerrible {
+    return Intl.message(
+      'Terrible',
+      name: 'moodTypeTerrible',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bad`
+  String get moodTypeBad {
+    return Intl.message(
+      'Bad',
+      name: 'moodTypeBad',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Meh`
+  String get moodTypeMeh {
+    return Intl.message(
+      'Meh',
+      name: 'moodTypeMeh',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Good`
+  String get moodTypeGood {
+    return Intl.message(
+      'Good',
+      name: 'moodTypeGood',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Awesome`
+  String get moodTypeAwesome {
+    return Intl.message(
+      'Awesome',
+      name: 'moodTypeAwesome',
       desc: '',
       args: [],
     );
@@ -355,6 +565,26 @@ class S {
     return Intl.message(
       'Choose between dark, light, and system default themes',
       name: 'pageSettingsThemeDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete User Data`
+  String get pageSettingsDeleteUserDataLabel {
+    return Intl.message(
+      'Delete User Data',
+      name: 'pageSettingsDeleteUserDataLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Permanently deletes all saved mood entries.`
+  String get pageSettingsDeleteUserDataDescription {
+    return Intl.message(
+      'Permanently deletes all saved mood entries.',
+      name: 'pageSettingsDeleteUserDataDescription',
       desc: '',
       args: [],
     );

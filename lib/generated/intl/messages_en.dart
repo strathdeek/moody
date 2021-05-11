@@ -19,20 +19,46 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
+  static String m0(score) => "Score: ${score}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "PageSettingsTitle": MessageLookupByLibrary.simpleMessage("Settings"),
         "appTitle": MessageLookupByLibrary.simpleMessage("MOODY"),
+        "localeKey": MessageLookupByLibrary.simpleMessage("en_US"),
+        "moodTypeAwesome": MessageLookupByLibrary.simpleMessage("Awesome"),
+        "moodTypeBad": MessageLookupByLibrary.simpleMessage("Bad"),
+        "moodTypeGood": MessageLookupByLibrary.simpleMessage("Good"),
+        "moodTypeMeh": MessageLookupByLibrary.simpleMessage("Meh"),
+        "moodTypeTerrible": MessageLookupByLibrary.simpleMessage("Terrible"),
         "notificationDescription": MessageLookupByLibrary.simpleMessage(
             "Have you recorded your mood yet today?"),
         "notificationTitle":
             MessageLookupByLibrary.simpleMessage("How are you?"),
+        "pageDashboardAddMoodButton":
+            MessageLookupByLibrary.simpleMessage("Add today\'s mood now!"),
+        "pageDashboardEntryAverageCardDescription":
+            MessageLookupByLibrary.simpleMessage(
+                "Average over the last 7 days"),
+        "pageDashboardEntryAverageCardTitle":
+            MessageLookupByLibrary.simpleMessage("Trend"),
+        "pageDashboardEntryCardScore": m0,
+        "pageDashboardEntryCardShowMore":
+            MessageLookupByLibrary.simpleMessage("show more"),
+        "pageDashboardEntryCardTitle":
+            MessageLookupByLibrary.simpleMessage("Latest Entry"),
+        "pageDashboardEntryNoEntriesText": MessageLookupByLibrary.simpleMessage(
+            "No entries found.\nRecord your first entry by tapping the \'Record your mood\' button below!"),
         "pageDashboardGreeting":
             MessageLookupByLibrary.simpleMessage("Welcome to Moody"),
         "pageDashboardGuest":
             MessageLookupByLibrary.simpleMessage("Guest User."),
         "pageDashboardHello": MessageLookupByLibrary.simpleMessage("Hello, "),
+        "pageDashboardNewEntryButton":
+            MessageLookupByLibrary.simpleMessage("Record Your Mood"),
         "pageDashboardTitle": MessageLookupByLibrary.simpleMessage("Home"),
+        "pageEntryListNoData":
+            MessageLookupByLibrary.simpleMessage("No entries available."),
         "pageProfileCreateButton":
             MessageLookupByLibrary.simpleMessage("Create profile"),
         "pageProfileDateOfBirthLabel":
@@ -50,6 +76,11 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Enable dark mode"),
         "pageSettingsDarkModeToggleLabel":
             MessageLookupByLibrary.simpleMessage("Dark Mode"),
+        "pageSettingsDeleteUserDataDescription":
+            MessageLookupByLibrary.simpleMessage(
+                "Permanently deletes all saved mood entries."),
+        "pageSettingsDeleteUserDataLabel":
+            MessageLookupByLibrary.simpleMessage("Delete User Data"),
         "pageSettingsLightModeToggleDescription":
             MessageLookupByLibrary.simpleMessage("Enable light mode"),
         "pageSettingsLightModeToggleLabel":
@@ -75,7 +106,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "pageSettingsThemeDescription": MessageLookupByLibrary.simpleMessage(
             "Choose between dark, light, and system default themes"),
         "pageSettingsThemeLabel": MessageLookupByLibrary.simpleMessage("Theme"),
+        "pageStatisticsLoadingError":
+            MessageLookupByLibrary.simpleMessage("Data could not be loaded"),
+        "pageStatisticsMonthly":
+            MessageLookupByLibrary.simpleMessage("Monthly"),
+        "pageStatisticsMonthlyNoData": MessageLookupByLibrary.simpleMessage(
+            "No Data for this month available."),
+        "pageStatisticsStreak": MessageLookupByLibrary.simpleMessage("Streak"),
+        "pageStatisticsStreakRecord":
+            MessageLookupByLibrary.simpleMessage("Your Record: "),
         "pageStatisticsTitle":
-            MessageLookupByLibrary.simpleMessage("Statistics")
+            MessageLookupByLibrary.simpleMessage("Statistics"),
+        "pageStatisticsType": MessageLookupByLibrary.simpleMessage("By Type")
       };
 }
