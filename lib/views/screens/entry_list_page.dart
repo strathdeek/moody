@@ -74,7 +74,7 @@ class _EntryListPageState extends State<EntryListPage> {
             builder: (context, state) {
               if (state is MoodLoadSuccess) {
                 var tiles = <Widget>[];
-                state.moodEntries.sort((a, b) => a.date.compareTo(b.date));
+                state.moodEntries.sort((a, b) => b.date.compareTo(a.date));
                 for (var mood in state.moodEntries.where((element) =>
                     element.date.month == _date.month &&
                     element.date.year == _date.year)) {

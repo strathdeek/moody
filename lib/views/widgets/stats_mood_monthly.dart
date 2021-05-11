@@ -14,6 +14,12 @@ class StatsMoodMonthly extends StatefulWidget {
 
 class _StatsMoodMonthlyState extends State<StatsMoodMonthly> {
   DateTime _date = DateTime.now();
+
+  TextStyle get axisLabelTextStyle => TextStyle(
+      fontSize: 9,
+      color: Theme.of(context).textTheme.headline5?.color,
+      fontWeight: FontWeight.bold);
+
   @override
   Widget build(BuildContext context) {
     return TitleCard(
@@ -70,7 +76,18 @@ class _StatsMoodMonthlyState extends State<StatsMoodMonthly> {
                               ],
                               titlesData: FlTitlesData(
                                   leftTitles: SideTitles(
-                                      interval: 20, showTitles: true)),
+                                    interval: 20,
+                                    showTitles: true,
+                                    getTextStyles: (value) =>
+                                        axisLabelTextStyle,
+                                  ),
+                                  bottomTitles: SideTitles(
+                                    interval: 7,
+                                    showTitles: true,
+                                    reservedSize: 14,
+                                    getTextStyles: (value) =>
+                                        axisLabelTextStyle,
+                                  )),
                               gridData: FlGridData(
                                 horizontalInterval: 10,
                               ),

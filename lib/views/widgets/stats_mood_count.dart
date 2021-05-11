@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -48,6 +50,13 @@ class StatsMoodCount extends StatelessWidget {
                                               .roundToDigits(1)
                                               .toString() +
                                           '%',
+                                  titleStyle: TextStyle(
+                                    fontSize: Theme.of(context)
+                                        .textTheme
+                                        .caption
+                                        ?.fontSize,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                   radius: 50,
                                 );
                               },
