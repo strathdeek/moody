@@ -91,7 +91,8 @@ class DashboardPage extends StatelessWidget {
                                       alignment: Alignment.bottomRight,
                                       child: TextButton(
                                         onPressed: () {
-                                          //TODO: navigate to mood entry list page
+                                          Navigator.of(context)
+                                              .pushNamed(EntryListPageRoute);
                                         },
                                         child: Text(
                                           S
