@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
+import 'package:moody/data/extensions.dart';
 import 'package:moody/data/constants/enums/mood_type.dart';
 import 'package:moody/views/widgets/emote_banner.dart';
 
@@ -25,7 +26,7 @@ class _NewEntryPageState extends State<NewEntryPage> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         shadowColor: Colors.transparent,
-        backgroundColor: _moodValue.toMoodType().toColor(),
+        backgroundColor: _moodValue.toMoodType().toColor().shade400,
         title: Text('How do you feel today?'),
       ),
       body: SafeArea(

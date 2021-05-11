@@ -60,6 +60,16 @@ class S {
     );
   }
 
+  /// `en_US`
+  String get localeKey {
+    return Intl.message(
+      'en_US',
+      name: 'localeKey',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Welcome to Moody`
   String get pageDashboardGreeting {
     return Intl.message(
@@ -95,6 +105,16 @@ class S {
     return Intl.message(
       'Home',
       name: 'pageDashboardTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add today's mood now!`
+  String get pageDashboardAddMoodButton {
+    return Intl.message(
+      'Add today\'s mood now!',
+      name: 'pageDashboardAddMoodButton',
       desc: '',
       args: [],
     );
@@ -190,6 +210,76 @@ class S {
     );
   }
 
+  /// `By Type`
+  String get pageStatisticsType {
+    return Intl.message(
+      'By Type',
+      name: 'pageStatisticsType',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Monthly`
+  String get pageStatisticsMonthly {
+    return Intl.message(
+      'Monthly',
+      name: 'pageStatisticsMonthly',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No Data for this month available.`
+  String get pageStatisticsMonthlyNoData {
+    return Intl.message(
+      'No Data for this month available.',
+      name: 'pageStatisticsMonthlyNoData',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Record: `
+  String get pageStatisticsStreakRecord {
+    return Intl.message(
+      'Your Record: ',
+      name: 'pageStatisticsStreakRecord',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Streak`
+  String get pageStatisticsStreak {
+    return Intl.message(
+      'Streak',
+      name: 'pageStatisticsStreak',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Data could not be loaded`
+  String get pageStatisticsLoadingError {
+    return Intl.message(
+      'Data could not be loaded',
+      name: 'pageStatisticsLoadingError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No entries available.`
+  String get pageEntryListNoData {
+    return Intl.message(
+      'No entries available.',
+      name: 'pageEntryListNoData',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Profile`
   String get pageProfileTitle {
     return Intl.message(
@@ -265,6 +355,56 @@ class S {
     return Intl.message(
       'Save profile',
       name: 'pageProfileSaveButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Terrible`
+  String get moodTypeTerrible {
+    return Intl.message(
+      'Terrible',
+      name: 'moodTypeTerrible',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bad`
+  String get moodTypeBad {
+    return Intl.message(
+      'Bad',
+      name: 'moodTypeBad',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Meh`
+  String get moodTypeMeh {
+    return Intl.message(
+      'Meh',
+      name: 'moodTypeMeh',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Good`
+  String get moodTypeGood {
+    return Intl.message(
+      'Good',
+      name: 'moodTypeGood',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Awesome`
+  String get moodTypeAwesome {
+    return Intl.message(
+      'Awesome',
+      name: 'moodTypeAwesome',
       desc: '',
       args: [],
     );

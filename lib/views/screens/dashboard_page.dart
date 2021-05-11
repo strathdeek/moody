@@ -9,6 +9,7 @@ import 'package:moody/views/widgets/emote_banner.dart';
 import 'package:moody/views/widgets/mood_entry_summary.dart';
 import 'package:moody/views/widgets/navigation_tray.dart';
 import 'package:moody/data/constants/enums/mood_type.dart';
+import 'package:moody/data/extensions.dart';
 
 class DashboardPage extends StatelessWidget {
   @override
@@ -90,7 +91,8 @@ class DashboardPage extends StatelessWidget {
                                       alignment: Alignment.bottomRight,
                                       child: TextButton(
                                         onPressed: () {
-                                          //TODO: navigate to mood entry list page
+                                          Navigator.of(context)
+                                              .pushNamed(EntryListPageRoute);
                                         },
                                         child: Text(
                                           S

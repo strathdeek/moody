@@ -4,6 +4,7 @@ import 'package:moody/data/models/mood.dart';
 import 'package:moody/generated/l10n.dart';
 import 'package:moody/views/widgets/emote_banner.dart';
 import 'package:moody/data/constants/enums/mood_type.dart';
+import 'package:moody/data/extensions.dart';
 
 class MoodEntrySummary extends StatelessWidget {
   final Mood mood;

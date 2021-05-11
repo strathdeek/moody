@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:moody/data/constants/navigation.dart';
 import 'package:moody/generated/l10n.dart';
 import 'package:moody/views/widgets/navigation_tray.dart';
+import 'package:moody/views/widgets/stats_mood_count.dart';
+import 'package:moody/views/widgets/stats_mood_monthly.dart';
+import 'package:moody/views/widgets/stats_mood_streak.dart';
 
 class StatisticsPage extends StatelessWidget {
   @override
@@ -16,8 +19,12 @@ class StatisticsPage extends StatelessWidget {
                   Navigator.of(context).pushNamed(SettingsPageRoute))
         ],
       ),
-      body: Center(
-        child: Text(S.of(context).pageStatisticsTitle),
+      body: ListView(
+        children: [
+          StatsMoodCount(),
+          StatsMoodMonthly(),
+          StatsMoodStreak(),
+        ],
       ),
       bottomNavigationBar: NavigationTray(),
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:moody/generated/l10n.dart';
 
 enum MoodType {
   awesome,
@@ -9,7 +10,7 @@ enum MoodType {
 }
 
 extension MoodTypeExtension on MoodType {
-  Color toColor() {
+  MaterialColor toColor() {
     var color;
     switch (this) {
       case MoodType.awesome:
@@ -28,24 +29,28 @@ extension MoodTypeExtension on MoodType {
         color = Colors.red;
         break;
     }
-    return color.shade400;
+    return color;
   }
-}
 
-extension MoodTypeConversion on double {
-  MoodType toMoodType() {
-    var mood;
-    if (this > 80) {
-      mood = MoodType.awesome;
-    } else if (this > 60) {
-      mood = MoodType.good;
-    } else if (this > 40) {
-      mood = MoodType.meh;
-    } else if (this > 20) {
-      mood = MoodType.bad;
-    } else {
-      mood = MoodType.terrible;
+  String getTypeName() {
+    var name;
+    switch (this) {
+      case MoodType.awesome:
+        name = S.current.moodTypeAwesome;
+        break;
+      case MoodType.good:
+        name = S.current.moodTypeGood;
+        break;
+      case MoodType.meh:
+        name = S.current.moodTypeMeh;
+        break;
+      case MoodType.bad:
+        name = S.current.moodTypeBad;
+        break;
+      case MoodType.terrible:
+        name = S.current.moodTypeTerrible;
+        break;
     }
-    return mood;
+    return name;
   }
 }
