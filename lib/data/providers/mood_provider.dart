@@ -5,6 +5,7 @@ import 'package:hive/hive.dart';
 import 'package:moody/data/constants/hive.dart';
 import 'package:moody/data/models/mood.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class MoodProvider {
   final Box<Mood> _moodBox = Hive.box(MoodBoxKey);
@@ -34,11 +35,20 @@ class MoodProvider {
         return entries[index].toValueList();
       },
     );
+    rows.insert(0, ['Time', 'Mood']);
     var csv = ListToCsvConverter().convert(rows);
 
-    final directory = await getApplicationDocumentsDirectory();
+    if (!await Permission.storage.request().isGranted) {
+      return;
+    }
+
+    final directory = await getExternalStorageDirectory();
+    if (directory == null) return;
     var file = File(
         '${directory.path}/moody_export_${DateTime.now().millisecondsSinceEpoch.toString()}.csv');
+    await file.create(recursive: true);
     await file.writeAsString(csv);
   }
 }
+
+mixin PermissionGroup {}
