@@ -49,5 +49,10 @@
 	    <!-- Permission options for the `reminder` group -->
     <key>NSRemindersUsageDescription</key>
     <string>reminders</string>
+		<!-- Permissions for file export-->
+	<key>LSSupportsOpeningDocumentsInPlace</key>
+	<true/>
+	<key>UIFileSharingEnabled</key>
+	<true/>
 </dict>
 </plist>
