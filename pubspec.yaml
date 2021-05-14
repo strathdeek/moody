@@ -39,6 +39,7 @@ dependencies:
   path_provider: ^2.0.1
   ext_storage: ^1.0.3
   fl_chart: ^0.35.0
+  kiwi: ^3.0.0-nullsafety.1
 
 dev_dependencies:
   flutter_test:

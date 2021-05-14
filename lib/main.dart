@@ -1,6 +1,9 @@
+import 'dart:io' as io;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:kiwi/kiwi.dart';
 import 'package:moody/bloc/mood/mood_bloc.dart';
 import 'package:moody/bloc/navigation/navigation_cubit.dart';
 import 'package:moody/bloc/reminder/reminder_cubit.dart';
@@ -13,11 +16,20 @@ import 'package:moody/data/providers/user_provider.dart';
 import 'package:moody/data/repositories/mood_repository.dart';
 import 'package:moody/data/repositories/preferences_repository.dart';
 import 'package:moody/data/repositories/user_repository.dart';
+import 'package:moody/platforms/platform.dart';
+import 'package:moody/platforms/platform_android.dart';
+import 'package:moody/platforms/platform_ios.dart';
 import 'package:moody/views/screens/router.dart';
 import 'generated/l10n.dart';
 
 void main() async {
   await initializeHiveDatabase();
+
+  if (io.Platform.isAndroid) {
+    KiwiContainer().registerSingleton<Platform>((container) => Android());
+  } else if (io.Platform.isIOS) {
+    KiwiContainer().registerSingleton<Platform>((container) => IOS());
+  }
 
   var moodProvider = MoodProvider();
   var moodRepository = MoodRepository(moodProvider);

@@ -1,9 +1,11 @@
-import 'dart:io';
+import 'dart:io' as io;
 
 import 'package:csv/csv.dart';
 import 'package:hive/hive.dart';
+import 'package:kiwi/kiwi.dart';
 import 'package:moody/data/constants/hive.dart';
 import 'package:moody/data/models/mood.dart';
+import 'package:moody/platforms/platform.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 
@@ -42,10 +44,10 @@ class MoodProvider {
       return;
     }
 
-    final directory = await getExternalStorageDirectory();
-    if (directory == null) return;
-    var file = File(
-        '${directory.path}/moody_export_${DateTime.now().millisecondsSinceEpoch.toString()}.csv');
+    final directory =
+        await KiwiContainer().resolve<Platform>().getFileExportPath();
+    var file = io.File(
+        '$directory/moody_export_${DateTime.now().millisecondsSinceEpoch.toString()}.csv');
     await file.create(recursive: true);
     await file.writeAsString(csv);
   }
